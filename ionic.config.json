@@ -1,0 +1,7 @@
+{
+  "name": "Ionic-Netlify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
