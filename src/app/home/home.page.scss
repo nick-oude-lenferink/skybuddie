@@ -1,0 +1,79 @@
+.title {
+    color: #F3F8FF;
+    font-size: 48px;
+    display: block;
+    font-family: 'Ruda';
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #BEDBFF;
+    font-size: 16px;
+    display: block;
+    font-family: 'Ruda';
+    text-align: right;
+}
+
+.logo-title {
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+    .logo {
+        width: 76px;
+        margin-right: 20px;
+    }
+}
+
+:host ::ng-deep .search-bar ion-searchbar {
+    --border-radius: 14px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    padding-left: 0;
+    padding-right: 0;
+    
+    .searchbar-input-container {
+        .searchbar-search-icon {
+            width: 26px;
+            height: 26px;
+            top: 18px;
+        }
+
+        .searchbar-input {
+            padding: 15px;
+            padding-left: 56px;
+        }
+    }
+
+
+}
+
+ion-searchbar::part(container) {
+    padding: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 0px solid;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+    outline-color: oklab(0.708 0 0 / 0.5);
+
+    .card-header {
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
+
+ion-grid {
+    --ion-grid-padding: 24px;
+    --ion-grid-column-padding: 12px;
+}
+
+.star-yellow {
+    color: oklch(85.2% 0.199 91.936);
+    ;
+}
