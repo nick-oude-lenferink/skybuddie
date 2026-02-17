@@ -13,10 +13,15 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () => import('./home/home.page').then( m => m.HomePage)
-  },  {
+  },
+  {
     path: 'sandbox',
     loadComponent: () => import('./sandbox/sandbox.page').then( m => m.SandboxPage)
   },
-
+  {
+    path: 'redirect',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
 
 ];

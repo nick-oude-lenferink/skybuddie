@@ -4,10 +4,12 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>    <ion-title>Map</ion-title>
   </ion-toolbar>
-<ion-content>
-  <div
-    leaflet
-    [leafletOptions]="options"
-    style="height: 100%">
-  </div>
+<ion-content [fullscreen]="true" >
+<div
+  leaflet
+  [leafletOptions]="options"
+  [leafletLayers]="layers" 
+  (leafletMapReady)="onMapReady($event)"
+  class="map" style="height:100vh">
+</div>
 </ion-content>

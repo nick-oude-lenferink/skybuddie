@@ -8,8 +8,8 @@
     <div class="logo-title">
       <img src="assets/e-flight_logo.svg" alt="Logo" class="logo" />
       <div style="display: inline-block;">
-        <span class="title">SkyBuddie.</span>
-        <span class="subtitle">powered by E-Flight Teuge</span>
+        <span class="title fly-in">SkyBuddie.</span>
+        <span class="subtitle appear">powered by E-Flight Teuge</span>
       </div>
     </div>
     <div class="ion-margin-bottom">
@@ -21,50 +21,74 @@
     </div>
   </div>
 </ion-header>
-<ion-content [fullscreen]="true" style="background-color: #EFF7FF;">
-  <ion-grid>
+<ion-content [fullscreen]="true">
+  <ion-grid style="background-image: linear-gradient(to right bottom, oklch(0.97 0.014 254.604) 0%, oklch(0.977 0.013 236.62) 50%, oklch(0.962 0.018 272.314) 100%)">
     <ion-row>
-      <ion-col>
+      <ion-col size="12" size-md="6" style="max-height: 50vh;">
         <div class="card map">
-          <div leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)" style="height: 40vh">
+          <div #mapContainer style="height: 50vh;">
           </div>
         </div>
       </ion-col>
-      <ion-col>
+      <ion-col size="12" size-md="6" style="max-height: 50vh;">
         <div class="card recent-reviews">
           <div class="card-header">
-            <span><i class="fa-solid fa-star star-yellow"></i></span>
+            <span><i class="fa-solid fa-star star-yellow" style="margin-right: 5px;"></i></span>
             <span>Recent reviews</span>
           </div>
           <div class="reviews">
             <div class="review" *ngFor="let review of reviews">
               <div class="review-header">
                 <div>
-                  <div>{{review.userFullName}}</div>
-                  <div>{{review.location}}</div>
+                  <div class="user">{{review.userFullName}}</div>
+                  <div class="location">{{review.location}}</div>
                 </div>
                 <div>
-                  <i class="fa-star" [class]="review.rating > 0 ? 'fa-solid star-yellow' : 'fa-regular'"></i>
-                  <i class="fa-star" [class]="review.rating > 1 ? 'fa-solid star-yellow' : 'fa-regular'"></i>
-                  <i class="fa-star" [class]="review.rating > 2 ? 'fa-solid star-yellow' : 'fa-regular'"></i>
-                  <i class="fa-star" [class]="review.rating > 3 ? 'fa-solid star-yellow' : 'fa-regular'"></i>
-                  <i class="fa-star" [class]="review.rating > 4 ? 'fa-solid star-yellow' : 'fa-regular'"></i>
-                  <!-- <ion-icon [name]="review.rating > 0 ? 'star' : 'star-outline'"></ion-icon>
-                  <ion-icon [name]="review.rating > 1 ? 'star' : 'star-outline'"></ion-icon>
-                  <ion-icon [name]="review.rating > 2 ? 'star' : 'star-outline'"></ion-icon>
-                  <ion-icon [name]="review.rating > 3 ? 'star' : 'star-outline'"></ion-icon>
-                  <ion-icon [name]="review.rating > 4 ? 'star' : 'star-outline'"></ion-icon> -->
+                  <i class="fa-star" [class]="review.rating > 0 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                  <i class="fa-star" [class]="review.rating > 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                  <i class="fa-star" [class]="review.rating > 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                  <i class="fa-star" [class]="review.rating > 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                  <i class="fa-star" [class]="review.rating > 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
                 </div>
               </div>
               <div class="review-description">{{review.description}}</div>
-              <div class="review-date">{{review.date}}</div>
+              <div class="review-date" [title]="review.date.toDateString()">{{review.date | relativeDate}}</div>
             </div>
           </div>
         </div>
       </ion-col>
     </ion-row>
     <ion-row>
-      <div class="card footer"></div>
+      <ion-col>
+        <div class="card">
+          <div class="card-header" style="justify-content: center;">Why SkyBuddie?</div>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-md="4" style="    align-items: center;    display: flex;    flex-direction: column;">
+                <div style="display: flex; justify-content: center; align-items: center; border-radius: 100%;color: #155dfc; background-color:#dbeafe; height: 64px;width: 64px; position: relative;    margin-bottom: 14px;">
+                  <i class="fa-solid fa-user-group fa-2x" style="font-size: 24px;"></i>
+                </div>
+                <div style="font-weight: bold;    margin-bottom: 14px;">Community</div>
+                <div style="text-align: center;font-weight: 300;    font-size: 0.9em;">Reviews from other pilots creating creative ideas for future destinations.</div>
+              </ion-col>
+              <ion-col size="12" size-md="4"  style="    align-items: center;    display: flex;    flex-direction: column;">
+                <div style="display: flex; justify-content: center; align-items: center; border-radius: 100%; color:#009966; background-color: #d0fae5; height: 64px;width: 64px; position: relative;    margin-bottom: 14px;">
+                  <i class="fa-solid fa-bolt-lightning fa-2x" style="font-size: 24px;"></i>
+                </div>
+                <div style="font-weight: bold;    margin-bottom: 14px;">Fast & Efficient</div>
+                <div style="text-align: center;font-weight: 300;    font-size: 0.9em;">Plan your complete VFR route in minutes with our intuitive interface.</div>
+              </ion-col>
+              <ion-col size="12" size-md="4"  style="    align-items: center;    display: flex;    flex-direction: column;">
+                <div style="display: flex; justify-content: center; align-items: center; border-radius: 100%; color: #9810fa;background-color: #f3e8ff; height: 64px;width: 64px; position: relative;    margin-bottom: 14px;">
+                  <i class="fa-solid fa-lightbulb fa-2x" style="font-size: 24px;"></i>
+                </div>
+                <div style="font-weight: bold;    margin-bottom: 14px;">Smart Planning</div>
+                <div style="text-align: center;font-weight: 300;    font-size: 0.9em;">Most advanced planning tool for VFR-flights. Including all available information.</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

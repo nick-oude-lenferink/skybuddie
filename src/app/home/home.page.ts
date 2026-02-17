@@ -1,29 +1,107 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, effect, ElementRef, OnInit, Signal, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonMenuButton, IonButtons, IonSearchbar, IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
 import L, { tileLayer, latLng, marker, icon } from 'leaflet';
-import { LeafletDirective } from '@bluehalo/ngx-leaflet';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { MarkerService } from './marker.service';
+import { MapMarker } from './map-marker.model';
+import { Review } from './review.model';
+import { ReviewService } from './review.service';
+import { DateTime } from 'luxon';
+import { RelativeDatePipe } from '../core/pipes/relative-date.pipe';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonIcon, IonSearchbar, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonMenuButton, LeafletDirective]
+  imports: [IonCol, IonRow, IonGrid, IonSearchbar, IonButtons,
+    IonContent, IonHeader, IonToolbar, CommonModule,
+    FormsModule, IonMenuButton, RelativeDatePipe
+  ]
 })
 export class HomePage implements OnInit {
-  map!: L.Map;
+  @ViewChild('mapContainer', { static: false }) mapContainer!: ElementRef<HTMLDivElement>;
+  map?: L.Map;
+  mapSignal = signal<L.Map | null>(null);
+  markerLayer = L.layerGroup();
+
+  markers = toSignal(
+    this.markerService.getMarkers(),
+    { initialValue: [] }
+  );
+
+  reviewsSignal: Signal<Review[]>;
 
   reviews: Review[] = [];
-  options = {
-    layers: [
-      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      }),
-      marker([52.370216, 4.895168], {
+
+  constructor(private markerService: MarkerService, private reviewService: ReviewService) {
+    this.reviewsSignal = toSignal(this.reviewService.getReviews(), { initialValue: [] });
+    effect(() => {
+      this.reviews = this.reviewsSignal();
+    });
+
+    addIcons({ starOutline, star });
+    effect(() => {
+      const map = this.mapSignal();
+      const markers = this.markers();
+      if (!map) {
+        return;
+      }
+
+      this.updateMarkers(markers);
+    });
+  }
+
+  ionViewDidEnter() {
+    this.initializeMap();
+  }
+
+  initializeMap() {
+    this.map = L.map(this.mapContainer.nativeElement, {
+      center: latLng(52.34788021254157, 5.618010883431486),
+      zoom: 6.5
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    }).addTo(this.map);
+
+    // Force Leaflet to recalc size and load tiles
+    // setTimeout(() => {
+    //   this.map!.invalidateSize();
+    // }, 0);
+
+    this.mapSignal.set(this.map);
+    this.markerLayer.addTo(this.map);
+    this.buildLegend(this.map);
+  }
+
+  private buildLegend(map: L.Map) {
+    const legend = new L.Control({ position: 'bottomright' });
+
+    legend.onAdd = () => {
+      const div = L.DomUtil.create('div', 'info legend');
+
+      div.innerHTML = `
+        <div class="header">Legend</div>
+        <div class="item"><img src="assets/marker-icon.png" height="20px"></img> Airports</div>
+      `;
+
+      return div;
+    };
+
+    legend.addTo(map);
+  }
+
+  private updateMarkers(markers: MapMarker[]) {
+    this.markerLayer.clearLayers();
+
+    markers.forEach(m => {
+      L.marker([m.lat, m.lng], {
         icon: icon({
           iconSize: [25, 41],
           iconAnchor: [13, 41],
@@ -31,74 +109,11 @@ export class HomePage implements OnInit {
           shadowUrl: 'assets/marker-shadow.png'
         })
       })
-    ],
-    zoom: 10,
-    center: latLng(52.0705, 4.3007) // Den Haag
-  };
-  constructor() {
-    addIcons({ starOutline, star }); // you are missing addIcons Import
-  }
-  onMapReady(map: L.Map) {
-    this.map = map;
-    map.on('baselayerchange', (eventLayer) => {
-      const v1 = 1;
-      const v2 = 2;
-      const v3 = 3;
-      const legend = new (L.Control.extend({
-        options: { position: 'bottomright' }
-      }));
-
-      const vm = this;
-      legend.onAdd = function (map) {
-        const div = L.DomUtil.create('div', 'legend');
-        const labels = [
-          'Sales greater than ' + v1,
-          'Sales greater than ' + v2,
-          'Sales equal or less than ' + v3
-        ];
-        const grades = [v1 + 1, v2 + 1, v3];
-        div.innerHTML = '<div><b>Legend</b></div>';
-        for (let i = 0; i < grades.length; i++) {
-          div.innerHTML += '<i style="background:' + 'blue' + '"> &nbsp; &nbsp;</i> &nbsp; &nbsp;'
-            + labels[i] + '<br/>';
-        }
-        return div;
-      };
-      legend.addTo(map);
+        .bindPopup(`${m.code} - ${m.name}`)
+        .addTo(this.markerLayer);
     });
   }
-  ionViewDidEnter() {
-    setTimeout(() => {
-      console.log('did');
 
-      this.map.invalidateSize();
-    }, 200);
+  ngOnInit() {    
   }
-  ngOnInit() {
-    this.reviews = [
-      {
-        userFullName: 'Jan Jansen',
-        date: new Date(),
-        description: 'Excellent tool for VFR planning! The airspaces are clearly marked and the map is well organized.',
-        rating: 5,
-        location: 'EHTE - Teuge'
-      },
-      {
-        userFullName: 'Lisa van der Berg',
-        date: new Date(),
-        description: 'Exactly what I was looking for. All relevant information for VFR flights in one overview. Top!',
-        rating: 4,
-        location: 'EHTE - Teuge'
-      }
-    ];
-  }
-
-}
-
-export class Review {
-  userFullName!: string;
-  date!: Date;
-  description!: string;
-  location!: string;
-  rating!: number;
 }
