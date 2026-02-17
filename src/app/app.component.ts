@@ -13,10 +13,18 @@ import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutlin
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: '/folder/inbox', icon: 'mail' },
-        { title: 'Map', url: '/map', icon: 'mail' },
+    { title: 'Home', url: '/home', icon: 'fa-regular fa-house' },
+    { title: 'Profile', url: '/redirect', icon: 'fa-regular fa-user' },
+    { title: 'Favorites', url: '/redirect', icon: 'fa-regular fa-heart' },
+    { title: 'Community', url: '/redirect', icon: 'fa-solid fa-user-group' },
+    { title: 'Airfields', url: '/redirect', icon: 'fa-solid fa-plane' },
+    { title: 'Food & Drinks', url: '/redirect', icon: 'fa-solid fa-utensils' },
+    { title: 'Transport', url: '/redirect', icon: 'fa-solid fa-car-side' },
+    { title: 'Activities', url: '/redirect', icon: 'fa-regular fa-compass' },
+    { title: 'FAQ', url: '/redirect', icon: 'fa-regular fa-circle-question' },
+    { title: 'Map', url: '/map', icon: 'fa-regular fa-user' },
+    { title: 'Sandbox', url: '/sandbox', icon: 'fa-regular fa-user' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {
     addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
   }

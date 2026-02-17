@@ -1,0 +1,197 @@
+.title {
+    color: #F3F8FF;
+    font-size: 48px;
+    display: block;
+    font-family: 'Ruda';
+    font-weight: 700;
+}
+
+
+.fly-in {
+    animation: flyIn 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.appear {
+    animation: 2s anim-appear ease-out;
+
+    @keyframes anim-appear {
+        0% {
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+
+    }
+}
+
+.subtitle {
+    color: #BEDBFF;
+    font-size: 16px;
+    display: block;
+    font-family: 'Ruda';
+    text-align: right;
+}
+
+.logo-title {
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+    .logo {
+        width: 76px;
+        margin-right: 20px;
+    }
+}
+
+:host ::ng-deep .search-bar ion-searchbar {
+    --border-radius: 14px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    padding-left: 0;
+    padding-right: 0;
+
+    .searchbar-input-container {
+        .searchbar-search-icon {
+            width: 26px;
+            height: 26px;
+            top: 18px;
+        }
+
+        .searchbar-input {
+            padding: 15px;
+            padding-left: 56px;
+        }
+    }
+
+
+}
+
+ion-searchbar::part(container) {
+    padding: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 0px solid;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+    outline-color: oklab(0.708 0 0 / 0.5);
+    height: 100%;
+
+    .card-header {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+ion-grid {
+    --ion-grid-padding: 24px;
+    --ion-grid-column-padding: 12px;
+}
+
+.star-yellow {
+    color: #fdc700;
+}
+
+.star-outline {
+    color: #868c99;
+}
+
+:host ::ng-deep {
+    .info.legend {
+        background: white;
+        padding: 10px 14px;
+        color: #333;
+        border-radius: 6px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+        .header {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            img {
+                margin-right: 5px;
+            }
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    overflow-y: scroll;
+    padding-right: 10px;
+
+    .review {
+        border: 1px solid;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        border-color: oklch(0.967 0.003 264.542);
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+            rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
+        .review-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .user {
+                font-weight: bold;
+            }
+
+            .location {
+                font-size: 0.8em;
+                color: #868c99;
+            }
+        }
+
+        .review-description {
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .review-date {
+            font-size: 0.8em;
+            color: #868c99;
+        }
+    }
+}

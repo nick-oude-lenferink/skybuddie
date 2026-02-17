@@ -1,2 +1,38 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+// @font-face {
+//     font-family: 'OpenSans';
+//     src: url('../assets/fonts/OpenSans.woff2') format('woff2');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'OpenSans';
+//     src: url('../assets/fonts/OpenSans-Light.ttf') format('ttf');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+
+@font-face {
+    font-family: 'Ruda';
+    src: url('../assets/fonts/Ruda.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/OpenSans-Light.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/OpenSans.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}

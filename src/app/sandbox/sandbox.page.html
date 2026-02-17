@@ -1,0 +1,654 @@
+<ion-header [style.height.px]="currentHeight" style="background-color: blue;">
+  <div class="large-header">
+    <h1>Title</h1>
+    <p>Some basic info</p>
+    <ion-searchbar></ion-searchbar>
+  </div>
+</ion-header>
+
+<ion-content 
+  
+  (ionScroll)="onScroll($event)"
+  scrollEvents="true"
+>
+  <!-- Your content -->
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative" data-fg-d3bl5="0.8:15.38:/src/app/App.tsx:154:9:4039:2434:e:div">
+      <div class="absolute top-6 right-6" data-fg-d3bl7="0.8:15.38:/src/app/App.tsx:156:11:4170:125:e:div"><button class="p-2 hover:bg-white/10 rounded-lg transition-colors group" aria-label="Open menu" data-fg-pwh28="1.104:2.51:/src/app/components/HamburgerMenu.tsx:92:5:3092:527:e:button::1">
+          <div class="flex flex-col gap-1.5 w-6" data-fg-pwh29="1.104:2.51:/src/app/components/HamburgerMenu.tsx:97:7:3240:365:e:div"><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh30="1.104:2.51:/src/app/components/HamburgerMenu.tsx:98:9:3292:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh31="1.104:2.51:/src/app/components/HamburgerMenu.tsx:99:9:3395:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh32="1.104:2.51:/src/app/components/HamburgerMenu.tsx:100:9:3498:94:e:span"></span></div>
+        </button></div>
+      <div class="flex items-center gap-4 mb-6" data-fg-d3bl9="0.8:15.38:/src/app/App.tsx:160:11:4307:1565:e:div">
+        <div class="p-3 bg-white/20 backdrop-blur rounded-xl" data-fg-d3bl10="0.8:15.38:/src/app/App.tsx:161:13:4366:123:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane w-10 h-10" data-fg-d3bl11="0.8:15.38:/src/app/App.tsx:162:15:4439:31:e:Plane::::::EEKI">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+          </svg></div>
+        <div data-fg-d3bl12="0.8:15.38:/src/app/App.tsx:164:13:4502:1353:e:div">
+          <h1 class="text-5xl font-bold mb-1" data-fg-d3bl13="0.8:15.38:/src/app/App.tsx:165:15:4522:1001:e:motion.h1" style="opacity: 1; transform: none;"><span class="inline-block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent" data-fg-d3bl14="0.8:15.38:/src/app/App.tsx:177:17:4931:565:e:motion.span" style="background-size: 200%; background-position: 17.4% center;">SkyBuddie.</span></h1>
+          <p class="text-sm text-blue-200 tracking-wide" data-fg-d3bl16="0.8:15.38:/src/app/App.tsx:192:15:5538:298:e:motion.p" style="opacity: 1;">powered by E-Flight Teuge</p>
+        </div>
+      </div>
+      <p class="text-xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-fg-d3bl18="0.8:15.38:/src/app/App.tsx:202:11:5883:354:e:p">The complete Dutch VFR flight planner. Plan your route with real-time visibility of airfields, restricted airspaces and important navigation points. Safe and reliable for every VFR flight through the Netherlands, Belgium and Germany.</p>
+      <div class="max-w-2xl" data-fg-d3bl21="0.8:15.38:/src/app/App.tsx:209:11:6284:174:e:div">
+        <div class="relative w-full" data-fg-jzc0="1.110:2.120:/src/app/components/SearchBar.tsx:63:5:1860:2906:e:div::1">
+          <div class="relative" data-fg-jzc1="1.110:2.120:/src/app/components/SearchBar.tsx:64:7:1916:831:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" data-fg-jzc2="1.110:2.120:/src/app/components/SearchBar.tsx:65:9:1951:85:e:Search::::::B9rK">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg><input type="text" placeholder="SkyBuddie. Search" class="w-full pl-12 pr-12 py-3.5 text-gray-900 bg-white border-2 border-white/20 rounded-xl focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-all shadow-lg" data-fg-jzc3="1.110:2.120:/src/app/components/SearchBar.tsx:66:9:2045:361:e:input" value=""></div>
+        </div>
+      </div>
+    </div>
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative" data-fg-d3bl5="0.8:15.38:/src/app/App.tsx:154:9:4039:2434:e:div">
+      <div class="absolute top-6 right-6" data-fg-d3bl7="0.8:15.38:/src/app/App.tsx:156:11:4170:125:e:div"><button class="p-2 hover:bg-white/10 rounded-lg transition-colors group" aria-label="Open menu" data-fg-pwh28="1.104:2.51:/src/app/components/HamburgerMenu.tsx:92:5:3092:527:e:button::1">
+          <div class="flex flex-col gap-1.5 w-6" data-fg-pwh29="1.104:2.51:/src/app/components/HamburgerMenu.tsx:97:7:3240:365:e:div"><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh30="1.104:2.51:/src/app/components/HamburgerMenu.tsx:98:9:3292:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh31="1.104:2.51:/src/app/components/HamburgerMenu.tsx:99:9:3395:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh32="1.104:2.51:/src/app/components/HamburgerMenu.tsx:100:9:3498:94:e:span"></span></div>
+        </button></div>
+      <div class="flex items-center gap-4 mb-6" data-fg-d3bl9="0.8:15.38:/src/app/App.tsx:160:11:4307:1565:e:div">
+        <div class="p-3 bg-white/20 backdrop-blur rounded-xl" data-fg-d3bl10="0.8:15.38:/src/app/App.tsx:161:13:4366:123:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane w-10 h-10" data-fg-d3bl11="0.8:15.38:/src/app/App.tsx:162:15:4439:31:e:Plane::::::EEKI">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+          </svg></div>
+        <div data-fg-d3bl12="0.8:15.38:/src/app/App.tsx:164:13:4502:1353:e:div">
+          <h1 class="text-5xl font-bold mb-1" data-fg-d3bl13="0.8:15.38:/src/app/App.tsx:165:15:4522:1001:e:motion.h1" style="opacity: 1; transform: none;"><span class="inline-block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent" data-fg-d3bl14="0.8:15.38:/src/app/App.tsx:177:17:4931:565:e:motion.span" style="background-size: 200%; background-position: 17.4% center;">SkyBuddie.</span></h1>
+          <p class="text-sm text-blue-200 tracking-wide" data-fg-d3bl16="0.8:15.38:/src/app/App.tsx:192:15:5538:298:e:motion.p" style="opacity: 1;">powered by E-Flight Teuge</p>
+        </div>
+      </div>
+      <p class="text-xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-fg-d3bl18="0.8:15.38:/src/app/App.tsx:202:11:5883:354:e:p">The complete Dutch VFR flight planner. Plan your route with real-time visibility of airfields, restricted airspaces and important navigation points. Safe and reliable for every VFR flight through the Netherlands, Belgium and Germany.</p>
+      <div class="max-w-2xl" data-fg-d3bl21="0.8:15.38:/src/app/App.tsx:209:11:6284:174:e:div">
+        <div class="relative w-full" data-fg-jzc0="1.110:2.120:/src/app/components/SearchBar.tsx:63:5:1860:2906:e:div::1">
+          <div class="relative" data-fg-jzc1="1.110:2.120:/src/app/components/SearchBar.tsx:64:7:1916:831:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" data-fg-jzc2="1.110:2.120:/src/app/components/SearchBar.tsx:65:9:1951:85:e:Search::::::B9rK">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg><input type="text" placeholder="SkyBuddie. Search" class="w-full pl-12 pr-12 py-3.5 text-gray-900 bg-white border-2 border-white/20 rounded-xl focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-all shadow-lg" data-fg-jzc3="1.110:2.120:/src/app/components/SearchBar.tsx:66:9:2045:361:e:input" value=""></div>
+        </div>
+      </div>
+    </div>
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative" data-fg-d3bl5="0.8:15.38:/src/app/App.tsx:154:9:4039:2434:e:div">
+      <div class="absolute top-6 right-6" data-fg-d3bl7="0.8:15.38:/src/app/App.tsx:156:11:4170:125:e:div"><button class="p-2 hover:bg-white/10 rounded-lg transition-colors group" aria-label="Open menu" data-fg-pwh28="1.104:2.51:/src/app/components/HamburgerMenu.tsx:92:5:3092:527:e:button::1">
+          <div class="flex flex-col gap-1.5 w-6" data-fg-pwh29="1.104:2.51:/src/app/components/HamburgerMenu.tsx:97:7:3240:365:e:div"><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh30="1.104:2.51:/src/app/components/HamburgerMenu.tsx:98:9:3292:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh31="1.104:2.51:/src/app/components/HamburgerMenu.tsx:99:9:3395:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh32="1.104:2.51:/src/app/components/HamburgerMenu.tsx:100:9:3498:94:e:span"></span></div>
+        </button></div>
+      <div class="flex items-center gap-4 mb-6" data-fg-d3bl9="0.8:15.38:/src/app/App.tsx:160:11:4307:1565:e:div">
+        <div class="p-3 bg-white/20 backdrop-blur rounded-xl" data-fg-d3bl10="0.8:15.38:/src/app/App.tsx:161:13:4366:123:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane w-10 h-10" data-fg-d3bl11="0.8:15.38:/src/app/App.tsx:162:15:4439:31:e:Plane::::::EEKI">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+          </svg></div>
+        <div data-fg-d3bl12="0.8:15.38:/src/app/App.tsx:164:13:4502:1353:e:div">
+          <h1 class="text-5xl font-bold mb-1" data-fg-d3bl13="0.8:15.38:/src/app/App.tsx:165:15:4522:1001:e:motion.h1" style="opacity: 1; transform: none;"><span class="inline-block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent" data-fg-d3bl14="0.8:15.38:/src/app/App.tsx:177:17:4931:565:e:motion.span" style="background-size: 200%; background-position: 17.4% center;">SkyBuddie.</span></h1>
+          <p class="text-sm text-blue-200 tracking-wide" data-fg-d3bl16="0.8:15.38:/src/app/App.tsx:192:15:5538:298:e:motion.p" style="opacity: 1;">powered by E-Flight Teuge</p>
+        </div>
+      </div>
+      <p class="text-xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-fg-d3bl18="0.8:15.38:/src/app/App.tsx:202:11:5883:354:e:p">The complete Dutch VFR flight planner. Plan your route with real-time visibility of airfields, restricted airspaces and important navigation points. Safe and reliable for every VFR flight through the Netherlands, Belgium and Germany.</p>
+      <div class="max-w-2xl" data-fg-d3bl21="0.8:15.38:/src/app/App.tsx:209:11:6284:174:e:div">
+        <div class="relative w-full" data-fg-jzc0="1.110:2.120:/src/app/components/SearchBar.tsx:63:5:1860:2906:e:div::1">
+          <div class="relative" data-fg-jzc1="1.110:2.120:/src/app/components/SearchBar.tsx:64:7:1916:831:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" data-fg-jzc2="1.110:2.120:/src/app/components/SearchBar.tsx:65:9:1951:85:e:Search::::::B9rK">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg><input type="text" placeholder="SkyBuddie. Search" class="w-full pl-12 pr-12 py-3.5 text-gray-900 bg-white border-2 border-white/20 rounded-xl focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-all shadow-lg" data-fg-jzc3="1.110:2.120:/src/app/components/SearchBar.tsx:66:9:2045:361:e:input" value=""></div>
+        </div>
+      </div>
+    </div>
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative" data-fg-d3bl5="0.8:15.38:/src/app/App.tsx:154:9:4039:2434:e:div">
+      <div class="absolute top-6 right-6" data-fg-d3bl7="0.8:15.38:/src/app/App.tsx:156:11:4170:125:e:div"><button class="p-2 hover:bg-white/10 rounded-lg transition-colors group" aria-label="Open menu" data-fg-pwh28="1.104:2.51:/src/app/components/HamburgerMenu.tsx:92:5:3092:527:e:button::1">
+          <div class="flex flex-col gap-1.5 w-6" data-fg-pwh29="1.104:2.51:/src/app/components/HamburgerMenu.tsx:97:7:3240:365:e:div"><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh30="1.104:2.51:/src/app/components/HamburgerMenu.tsx:98:9:3292:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh31="1.104:2.51:/src/app/components/HamburgerMenu.tsx:99:9:3395:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh32="1.104:2.51:/src/app/components/HamburgerMenu.tsx:100:9:3498:94:e:span"></span></div>
+        </button></div>
+      <div class="flex items-center gap-4 mb-6" data-fg-d3bl9="0.8:15.38:/src/app/App.tsx:160:11:4307:1565:e:div">
+        <div class="p-3 bg-white/20 backdrop-blur rounded-xl" data-fg-d3bl10="0.8:15.38:/src/app/App.tsx:161:13:4366:123:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane w-10 h-10" data-fg-d3bl11="0.8:15.38:/src/app/App.tsx:162:15:4439:31:e:Plane::::::EEKI">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+          </svg></div>
+        <div data-fg-d3bl12="0.8:15.38:/src/app/App.tsx:164:13:4502:1353:e:div">
+          <h1 class="text-5xl font-bold mb-1" data-fg-d3bl13="0.8:15.38:/src/app/App.tsx:165:15:4522:1001:e:motion.h1" style="opacity: 1; transform: none;"><span class="inline-block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent" data-fg-d3bl14="0.8:15.38:/src/app/App.tsx:177:17:4931:565:e:motion.span" style="background-size: 200%; background-position: 17.4% center;">SkyBuddie.</span></h1>
+          <p class="text-sm text-blue-200 tracking-wide" data-fg-d3bl16="0.8:15.38:/src/app/App.tsx:192:15:5538:298:e:motion.p" style="opacity: 1;">powered by E-Flight Teuge</p>
+        </div>
+      </div>
+      <p class="text-xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-fg-d3bl18="0.8:15.38:/src/app/App.tsx:202:11:5883:354:e:p">The complete Dutch VFR flight planner. Plan your route with real-time visibility of airfields, restricted airspaces and important navigation points. Safe and reliable for every VFR flight through the Netherlands, Belgium and Germany.</p>
+      <div class="max-w-2xl" data-fg-d3bl21="0.8:15.38:/src/app/App.tsx:209:11:6284:174:e:div">
+        <div class="relative w-full" data-fg-jzc0="1.110:2.120:/src/app/components/SearchBar.tsx:63:5:1860:2906:e:div::1">
+          <div class="relative" data-fg-jzc1="1.110:2.120:/src/app/components/SearchBar.tsx:64:7:1916:831:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" data-fg-jzc2="1.110:2.120:/src/app/components/SearchBar.tsx:65:9:1951:85:e:Search::::::B9rK">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg><input type="text" placeholder="SkyBuddie. Search" class="w-full pl-12 pr-12 py-3.5 text-gray-900 bg-white border-2 border-white/20 rounded-xl focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-all shadow-lg" data-fg-jzc3="1.110:2.120:/src/app/components/SearchBar.tsx:66:9:2045:361:e:input" value=""></div>
+        </div>
+      </div>
+    </div>
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative" data-fg-d3bl5="0.8:15.38:/src/app/App.tsx:154:9:4039:2434:e:div">
+      <div class="absolute top-6 right-6" data-fg-d3bl7="0.8:15.38:/src/app/App.tsx:156:11:4170:125:e:div"><button class="p-2 hover:bg-white/10 rounded-lg transition-colors group" aria-label="Open menu" data-fg-pwh28="1.104:2.51:/src/app/components/HamburgerMenu.tsx:92:5:3092:527:e:button::1">
+          <div class="flex flex-col gap-1.5 w-6" data-fg-pwh29="1.104:2.51:/src/app/components/HamburgerMenu.tsx:97:7:3240:365:e:div"><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh30="1.104:2.51:/src/app/components/HamburgerMenu.tsx:98:9:3292:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh31="1.104:2.51:/src/app/components/HamburgerMenu.tsx:99:9:3395:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh32="1.104:2.51:/src/app/components/HamburgerMenu.tsx:100:9:3498:94:e:span"></span></div>
+        </button></div>
+      <div class="flex items-center gap-4 mb-6" data-fg-d3bl9="0.8:15.38:/src/app/App.tsx:160:11:4307:1565:e:div">
+        <div class="p-3 bg-white/20 backdrop-blur rounded-xl" data-fg-d3bl10="0.8:15.38:/src/app/App.tsx:161:13:4366:123:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane w-10 h-10" data-fg-d3bl11="0.8:15.38:/src/app/App.tsx:162:15:4439:31:e:Plane::::::EEKI">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+          </svg></div>
+        <div data-fg-d3bl12="0.8:15.38:/src/app/App.tsx:164:13:4502:1353:e:div">
+          <h1 class="text-5xl font-bold mb-1" data-fg-d3bl13="0.8:15.38:/src/app/App.tsx:165:15:4522:1001:e:motion.h1" style="opacity: 1; transform: none;"><span class="inline-block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent" data-fg-d3bl14="0.8:15.38:/src/app/App.tsx:177:17:4931:565:e:motion.span" style="background-size: 200%; background-position: 17.4% center;">SkyBuddie.</span></h1>
+          <p class="text-sm text-blue-200 tracking-wide" data-fg-d3bl16="0.8:15.38:/src/app/App.tsx:192:15:5538:298:e:motion.p" style="opacity: 1;">powered by E-Flight Teuge</p>
+        </div>
+      </div>
+      <p class="text-xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-fg-d3bl18="0.8:15.38:/src/app/App.tsx:202:11:5883:354:e:p">The complete Dutch VFR flight planner. Plan your route with real-time visibility of airfields, restricted airspaces and important navigation points. Safe and reliable for every VFR flight through the Netherlands, Belgium and Germany.</p>
+      <div class="max-w-2xl" data-fg-d3bl21="0.8:15.38:/src/app/App.tsx:209:11:6284:174:e:div">
+        <div class="relative w-full" data-fg-jzc0="1.110:2.120:/src/app/components/SearchBar.tsx:63:5:1860:2906:e:div::1">
+          <div class="relative" data-fg-jzc1="1.110:2.120:/src/app/components/SearchBar.tsx:64:7:1916:831:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" data-fg-jzc2="1.110:2.120:/src/app/components/SearchBar.tsx:65:9:1951:85:e:Search::::::B9rK">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg><input type="text" placeholder="SkyBuddie. Search" class="w-full pl-12 pr-12 py-3.5 text-gray-900 bg-white border-2 border-white/20 rounded-xl focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-all shadow-lg" data-fg-jzc3="1.110:2.120:/src/app/components/SearchBar.tsx:66:9:2045:361:e:input" value=""></div>
+        </div>
+      </div>
+    </div>
+</ion-content>
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white" data-fg-d3bl4="0.8:15.38:/src/app/App.tsx:153:7:3957:2529:e:div">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative" data-fg-d3bl5="0.8:15.38:/src/app/App.tsx:154:9:4039:2434:e:div">
+      <div class="absolute top-6 right-6" data-fg-d3bl7="0.8:15.38:/src/app/App.tsx:156:11:4170:125:e:div"><button class="p-2 hover:bg-white/10 rounded-lg transition-colors group" aria-label="Open menu" data-fg-pwh28="1.104:2.51:/src/app/components/HamburgerMenu.tsx:92:5:3092:527:e:button::1">
+          <div class="flex flex-col gap-1.5 w-6" data-fg-pwh29="1.104:2.51:/src/app/components/HamburgerMenu.tsx:97:7:3240:365:e:div"><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh30="1.104:2.51:/src/app/components/HamburgerMenu.tsx:98:9:3292:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh31="1.104:2.51:/src/app/components/HamburgerMenu.tsx:99:9:3395:94:e:span"></span><span class="h-0.5 w-full bg-white rounded-full transition-all group-hover:bg-blue-200" data-fg-pwh32="1.104:2.51:/src/app/components/HamburgerMenu.tsx:100:9:3498:94:e:span"></span></div>
+        </button></div>
+      <div class="flex items-center gap-4 mb-6" data-fg-d3bl9="0.8:15.38:/src/app/App.tsx:160:11:4307:1565:e:div">
+        <div class="p-3 bg-white/20 backdrop-blur rounded-xl" data-fg-d3bl10="0.8:15.38:/src/app/App.tsx:161:13:4366:123:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane w-10 h-10" data-fg-d3bl11="0.8:15.38:/src/app/App.tsx:162:15:4439:31:e:Plane::::::EEKI">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+          </svg></div>
+        <div data-fg-d3bl12="0.8:15.38:/src/app/App.tsx:164:13:4502:1353:e:div">
+          <h1 class="text-5xl font-bold mb-1" data-fg-d3bl13="0.8:15.38:/src/app/App.tsx:165:15:4522:1001:e:motion.h1" style="opacity: 1; transform: none;"><span class="inline-block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent" data-fg-d3bl14="0.8:15.38:/src/app/App.tsx:177:17:4931:565:e:motion.span" style="background-size: 200%; background-position: 17.4% center;">SkyBuddie.</span></h1>
+          <p class="text-sm text-blue-200 tracking-wide" data-fg-d3bl16="0.8:15.38:/src/app/App.tsx:192:15:5538:298:e:motion.p" style="opacity: 1;">powered by E-Flight Teuge</p>
+        </div>
+      </div>
+      <p class="text-xl text-blue-50 max-w-3xl leading-relaxed mb-8" data-fg-d3bl18="0.8:15.38:/src/app/App.tsx:202:11:5883:354:e:p">The complete Dutch VFR flight planner. Plan your route with real-time visibility of airfields, restricted airspaces and important navigation points. Safe and reliable for every VFR flight through the Netherlands, Belgium and Germany.</p>
+      <div class="max-w-2xl" data-fg-d3bl21="0.8:15.38:/src/app/App.tsx:209:11:6284:174:e:div">
+        <div class="relative w-full" data-fg-jzc0="1.110:2.120:/src/app/components/SearchBar.tsx:63:5:1860:2906:e:div::1">
+          <div class="relative" data-fg-jzc1="1.110:2.120:/src/app/components/SearchBar.tsx:64:7:1916:831:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" data-fg-jzc2="1.110:2.120:/src/app/components/SearchBar.tsx:65:9:1951:85:e:Search::::::B9rK">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg><input type="text" placeholder="SkyBuddie. Search" class="w-full pl-12 pr-12 py-3.5 text-gray-900 bg-white border-2 border-white/20 rounded-xl focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-all shadow-lg" data-fg-jzc3="1.110:2.120:/src/app/components/SearchBar.tsx:66:9:2045:361:e:input" value=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">sandbox</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container">
+    <div class="tailwind">
+      <div id="fig-code-root" style="height: 100%;">
+        <div class="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50" data-fg-d3bl0="0.8:15.38:/src/app/App.tsx:148:5:3727:7486:e:div::1">
+          <div class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-[9999] transform transition-transform duration-300 ease-in-out translate-x-full" data-fg-pwh5="1.104:2.51:/src/app/components/HamburgerMenu.tsx:33:7:1075:1857:e:div">
+            <div class="flex flex-col h-full" data-fg-pwh6="1.104:2.51:/src/app/components/HamburgerMenu.tsx:38:9:1304:1615:e:div">
+              <div class="flex items-center justify-between p-6 border-b border-gray-200" data-fg-pwh8="1.104:2.51:/src/app/components/HamburgerMenu.tsx:40:11:1378:424:e:div">
+                <h2 class="text-xl font-bold text-gray-900" data-fg-pwh9="1.104:2.51:/src/app/components/HamburgerMenu.tsx:41:13:1471:57:e:h2">Menu</h2><button class="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Sluit menu" data-fg-pwh11="1.104:2.51:/src/app/components/HamburgerMenu.tsx:42:13:1541:244:e:button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-6 h-6 text-gray-600" data-fg-pwh12="1.104:2.51:/src/app/components/HamburgerMenu.tsx:47:15:1724:39:e:X::::::TvS">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg></button>
+              </div>
+              <nav class="flex-1 overflow-y-auto p-4" data-fg-pwh14="1.104:2.51:/src/app/components/HamburgerMenu.tsx:52:11:1843:791:e:nav">
+                <ul class="space-y-2" data-fg-pwh15="1.104:2.51:/src/app/components/HamburgerMenu.tsx:53:13:1900:717:e:ul">
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#home" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                        <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Home</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#profiel" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Profile</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#favorieten" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Favorites</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#community" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Community</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#vliegvelden" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Airfields</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#horeca" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"></path>
+                        <path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"></path>
+                        <path d="m2.1 21.8 6.4-6.3"></path>
+                        <path d="m19 5-7 7"></path>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Food &amp; Drinks</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#transport" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-car w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+                        <circle cx="7" cy="17" r="2"></circle>
+                        <path d="M9 17h6"></path>
+                        <circle cx="17" cy="17" r="2"></circle>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Transport</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#activiteiten" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">Activities</span></a></li>
+                  <li data-fg-pwh17="1.104:2.51:/src/app/components/HamburgerMenu.tsx:57:19:2051:511:e:li"><a href="#faq" class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors group" data-fg-pwh18="1.104:2.51:/src/app/components/HamburgerMenu.tsx:58:21:2093:445:e:a"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help w-5 h-5 text-gray-500 group-hover:text-blue-600" data-fg-pwh19="1.104:2.51:/src/app/components/HamburgerMenu.tsx:63:23:2373:68:e:Icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg><span class="font-medium" data-fg-pwh20="1.104:2.51:/src/app/components/HamburgerMenu.tsx:64:23:2464:49:e:span">FAQ</span></a></li>
+                </ul>
+              </nav>
+              <div class="p-6 border-t border-gray-200 bg-gray-50" data-fg-pwh23="1.104:2.51:/src/app/components/HamburgerMenu.tsx:73:11:2671:233:e:div">
+                <p class="text-xs text-gray-500 text-center" data-fg-pwh24="1.104:2.51:/src/app/components/HamburgerMenu.tsx:74:13:2741:146:e:p">© 2026 SkyBuddie<br data-fg-pwh26="1.104:2.51:/src/app/components/HamburgerMenu.tsx:76:15:2836:6:e:br">Version 1.0.0</p>
+              </div>
+            </div>
+          </div>
+
+          <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-fg-d3bl24="0.8:15.38:/src/app/App.tsx:219:7:6526:4167:e:main">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" data-fg-d3bl25="0.8:15.38:/src/app/App.tsx:220:9:6597:1340:e:div">
+              <div class="lg:col-span-1" id="map-section" data-fg-d3bl27="0.8:15.38:/src/app/App.tsx:222:11:6717:443:e:div">
+                <div class="bg-white rounded-lg shadow-xl p-4" data-fg-d3bl28="0.8:15.38:/src/app/App.tsx:223:13:6778:365:e:div">
+                  <div class="aspect-square" data-fg-d3bl30="0.8:15.38:/src/app/App.tsx:225:15:6872:252:e:div">
+                    <div class="relative w-full h-full" data-fg-dbxu0="1.57:1.7679:/src/app/components/MapComponent.tsx:204:5:6993:323:e:div::1">
+                      <div class="w-full h-full rounded-lg leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" data-fg-dbxu1="1.57:1.7679:/src/app/components/MapComponent.tsx:205:7:7040:139:e:div" tabindex="0" style="min-height: 400px; min-width: 400px; position: relative;">
+                        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-50px, -50px, 0px);">
+                          <div class="leaflet-pane leaflet-tile-pane">
+                            <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                              <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" src="https://a.tile.openstreetmap.org/7/66/42.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(248px, 137px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/7/66/41.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(248px, -119px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/7/65/42.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-8px, 137px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/7/67/42.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(504px, 137px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/7/66/43.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(248px, 393px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/7/65/41.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-8px, -119px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/7/67/41.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(504px, -119px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/7/65/43.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-8px, 393px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/7/67/43.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(504px, 393px, 0px); opacity: 1;"></div>
+                            </div>
+                          </div>
+                          <div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="557" height="557" viewBox="4 4 557 557" style="transform: translate3d(4px, 4px, 0px);">
+                              <g>
+                                <path class="leaflet-interactive" stroke="#dc2626" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 5" fill="#dc2626" fill-opacity="0.35" fill-rule="evenodd" d="M275 174L279 171L281 174L277 177z"></path>
+                                <path class="leaflet-interactive" stroke="#dc2626" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 5" fill="#dc2626" fill-opacity="0.35" fill-rule="evenodd" d="M215 181L217 179L218 181L216 182z"></path>
+                                <path class="leaflet-interactive" stroke="#ea580c" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8, 8" fill="#ea580c" fill-opacity="0.25" fill-rule="evenodd" d="M267 203L280 195L287 198L273 206z"></path>
+                                <path class="leaflet-interactive" stroke="#ea580c" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8, 8" fill="#ea580c" fill-opacity="0.25" fill-rule="evenodd" d="M253 285L266 275L275 279L262 290z"></path>
+                                <path class="leaflet-interactive" stroke="#ea580c" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8, 8" fill="#ea580c" fill-opacity="0.25" fill-rule="evenodd" d="M257 29L264 21L271 24L264 32z"></path>
+                                <path class="leaflet-interactive" stroke="#ca8a04" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5, 10" fill="#ca8a04" fill-opacity="0.2" fill-rule="evenodd" d="M180 23L193 17L202 21L189 27z"></path>
+                                <path class="leaflet-interactive" stroke="#ca8a04" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5, 10" fill="#ca8a04" fill-opacity="0.2" fill-rule="evenodd" d="M303 3L320 2L308 8z"></path>
+                                <path class="leaflet-interactive" stroke="#7c3aed" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3, 6" fill="#7c3aed" fill-opacity="0.15" fill-rule="evenodd" d="M159 172L187 142L196 149L168 179z"></path>
+                                <path class="leaflet-interactive" stroke="#7c3aed" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3, 6" fill="#7c3aed" fill-opacity="0.15" fill-rule="evenodd" d="M132 224L150 209L155 216L136 231z"></path>
+                                <path class="leaflet-interactive" stroke="#7c3aed" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3, 6" fill="#7c3aed" fill-opacity="0.15" fill-rule="evenodd" d="M218 297L237 282L241 290L223 304z"></path>
+                                <path class="leaflet-interactive" stroke="#0891b2" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2, 8" fill="#0891b2" fill-opacity="0.1" fill-rule="evenodd" d="M136 201L209 119L228 134L155 209z"></path>
+                                <path class="leaflet-interactive" stroke="#0891b2" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2, 8" fill="#0891b2" fill-opacity="0.1" fill-rule="evenodd" d="M109 253L164 194L173 209L118 268z"></path>
+                                <path class="leaflet-interactive" stroke="#dc2626" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 5" fill="#dc2626" fill-opacity="0.35" fill-rule="evenodd" d="M132 372L136 372L134 374z"></path>
+                                <path class="leaflet-interactive" stroke="#ea580c" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8, 8" fill="#ea580c" fill-opacity="0.25" fill-rule="evenodd" d="M232 333L241 326L246 329L237 336z"></path>
+                                <path class="leaflet-interactive" stroke="#ea580c" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8, 8" fill="#ea580c" fill-opacity="0.25" fill-rule="evenodd" d="M150 470L159 463L164 465L155 473z"></path>
+                                <path class="leaflet-interactive" stroke="#ca8a04" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5, 10" fill="#ca8a04" fill-opacity="0.2" fill-rule="evenodd" d="M141 311L146 307L150 310L146 314z"></path>
+                                <path class="leaflet-interactive" stroke="#7c3aed" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3, 6" fill="#7c3aed" fill-opacity="0.15" fill-rule="evenodd" d="M127 384L150 362L155 369L132 391z"></path>
+                                <path class="leaflet-interactive" stroke="#7c3aed" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3, 6" fill="#7c3aed" fill-opacity="0.15" fill-rule="evenodd" d="M132 333L146 319L150 323L136 338z"></path>
+                                <path class="leaflet-interactive" stroke="#0891b2" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2, 8" fill="#0891b2" fill-opacity="0.1" fill-rule="evenodd" d="M100 413L173 341L191 355L118 427z"></path>
+                                <path class="leaflet-interactive" stroke="#dc2626" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 5" fill="#dc2626" fill-opacity="0.35" fill-rule="evenodd" d="M0 0"></path>
+                                <path class="leaflet-interactive" stroke="#ea580c" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8, 8" fill="#ea580c" fill-opacity="0.25" fill-rule="evenodd" d="M0 0"></path>
+                                <path class="leaflet-interactive" stroke="#ea580c" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8, 8" fill="#ea580c" fill-opacity="0.25" fill-rule="evenodd" d="M0 0"></path>
+                                <path class="leaflet-interactive" stroke="#ca8a04" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5, 10" fill="#ca8a04" fill-opacity="0.2" fill-rule="evenodd" d="M0 0"></path>
+                                <path class="leaflet-interactive" stroke="#ca8a04" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5, 10" fill="#ca8a04" fill-opacity="0.2" fill-rule="evenodd" d="M364 142L378 134L387 139L373 146z"></path>
+                                <path class="leaflet-interactive" stroke="#7c3aed" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3, 6" fill="#7c3aed" fill-opacity="0.15" fill-rule="evenodd" d="M0 0"></path>
+                                <path class="leaflet-interactive" stroke="#7c3aed" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3, 6" fill="#7c3aed" fill-opacity="0.15" fill-rule="evenodd" d="M528 59L546 44L551 49L532 64z"></path>
+                                <path class="leaflet-interactive" stroke="#0891b2" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2, 8" fill="#0891b2" fill-opacity="0.1" fill-rule="evenodd" d="M0 0"></path>
+                                <path class="leaflet-interactive" stroke="#0891b2" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2, 8" fill="#0891b2" fill-opacity="0.1" fill-rule="evenodd" d="M501 89L563 15L563 52L519 104z"></path>
+                              </g>
+                            </svg></div>
+                          <div class="leaflet-pane leaflet-shadow-pane"></div>
+                          <div class="leaflet-pane leaflet-marker-pane">
+                            <div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(335px, 41px, 0px); z-index: 41;">
+                              <div style="
+            width: 30px;
+            height: 30px;
+            background-color: #3b82f6;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+          "></div>
+                            </div>
+                            <div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -10px; margin-top: -10px; width: 20px; height: 20px; transform: translate3d(286px, 172px, 0px); z-index: 172;">
+                              <div style="
+            width: 20px;
+            height: 20px;
+            background-color: #10b981;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+          "></div>
+                            </div>
+                            <div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -10px; margin-top: -10px; width: 20px; height: 20px; transform: translate3d(329px, 100px, 0px); z-index: 100;">
+                              <div style="
+            width: 20px;
+            height: 20px;
+            background-color: #10b981;
+            border: 3px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+          "></div>
+                            </div>
+                            <div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(239px, 140px, 0px); z-index: 140;">
+                              <div style="
+            width: 30px;
+            height: 30px;
+            background-color: #3b82f6;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+          "></div>
+                            </div>
+                            <div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -10px; margin-top: -10px; width: 20px; height: 20px; transform: translate3d(641px, 182px, 0px); z-index: 182;">
+                              <div style="
+            width: 20px;
+            height: 20px;
+            background-color: #10b981;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+          "></div>
+                            </div>
+                            <div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -10px; margin-top: -10px; width: 20px; height: 20px; transform: translate3d(169px, 318px, 0px); z-index: 318;">
+                              <div style="
+            width: 20px;
+            height: 20px;
+            background-color: #10b981;
+            border: 3px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+          "></div>
+                            </div>
+                          </div>
+                          <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                          <div class="leaflet-pane leaflet-popup-pane"></div>
+                          <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(16930px, 10897px, 0px) scale(64);"></div>
+                        </div>
+                        <div class="leaflet-control-container">
+                          <div class="leaflet-top leaflet-left">
+                            <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">−</span></a></div>
+                          </div>
+                          <div class="leaflet-top leaflet-right"></div>
+                          <div class="leaflet-bottom leaflet-left"></div>
+                          <div class="leaflet-bottom leaflet-right">
+                            <div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag">
+                                  <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
+                                  <path fill="#FFD500" d="M0 4h12v3H0z"></path>
+                                  <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
+                                </svg> Leaflet</a> <span aria-hidden="true">|</span> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="absolute top-4 right-4 z-[1000]" data-fg-dbxu3="1.57:1.7679:/src/app/components/MapComponent.tsx:211:7:7216:89:e:div">
+                        <div class="bg-white/95 backdrop-blur rounded-lg shadow-lg p-3 max-h-[500px] overflow-y-auto" data-fg-bzoi0="1.19:2.119:/src/app/components/AirfieldLegend.tsx:5:5:100:3936:e:div::1">
+                          <h3 class="font-semibold mb-2 text-sm" data-fg-bzoi1="1.19:2.119:/src/app/components/AirfieldLegend.tsx:6:7:205:54:e:h3">Legend</h3>
+                          <div class="space-y-2 text-xs" data-fg-bzoi3="1.19:2.119:/src/app/components/AirfieldLegend.tsx:7:7:266:3759:e:div">
+                            <div data-fg-bzoi5="1.19:2.119:/src/app/components/AirfieldLegend.tsx:9:9:345:698:e:div">
+                              <p class="text-gray-500 mb-1.5 font-medium" data-fg-bzoi6="1.19:2.119:/src/app/components/AirfieldLegend.tsx:10:11:361:61:e:p">Airfields</p>
+                              <div class="pl-2 space-y-1" data-fg-bzoi8="1.19:2.119:/src/app/components/AirfieldLegend.tsx:11:11:433:595:e:div">
+                                <p class="text-gray-400 text-[10px] mb-1" data-fg-bzoi9="1.19:2.119:/src/app/components/AirfieldLegend.tsx:12:13:478:57:e:p">Surface</p>
+                                <div class="space-y-1.5" data-fg-bzoi11="1.19:2.119:/src/app/components/AirfieldLegend.tsx:13:13:548:463:e:div">
+                                  <div class="flex items-center gap-2" data-fg-bzoi12="1.19:2.119:/src/app/components/AirfieldLegend.tsx:14:15:592:198:e:div">
+                                    <div class="w-4 h-4 rounded-full bg-gray-400 border-2 border-white shadow-sm" data-fg-bzoi13="1.19:2.119:/src/app/components/AirfieldLegend.tsx:15:17:650:84:e:div"></div><span data-fg-bzoi14="1.19:2.119:/src/app/components/AirfieldLegend.tsx:16:17:751:18:e:span">Paved</span>
+                                  </div>
+                                  <div class="flex items-center gap-2" data-fg-bzoi16="1.19:2.119:/src/app/components/AirfieldLegend.tsx:18:15:805:187:e:div">
+                                    <div class="w-4 h-4 bg-gray-400 border-2 border-white shadow-sm" data-fg-bzoi17="1.19:2.119:/src/app/components/AirfieldLegend.tsx:19:17:863:71:e:div"></div><span data-fg-bzoi18="1.19:2.119:/src/app/components/AirfieldLegend.tsx:20:17:951:20:e:span">Unpaved</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div data-fg-bzoi21="1.19:2.119:/src/app/components/AirfieldLegend.tsx:27:9:1075:651:e:div">
+                              <div class="pl-2 space-y-1" data-fg-bzoi22="1.19:2.119:/src/app/components/AirfieldLegend.tsx:28:11:1091:620:e:div">
+                                <p class="text-gray-400 text-[10px] mb-1" data-fg-bzoi23="1.19:2.119:/src/app/components/AirfieldLegend.tsx:29:13:1136:56:e:p">Status</p>
+                                <div class="space-y-1.5" data-fg-bzoi25="1.19:2.119:/src/app/components/AirfieldLegend.tsx:30:13:1205:489:e:div">
+                                  <div class="flex items-center gap-2" data-fg-bzoi26="1.19:2.119:/src/app/components/AirfieldLegend.tsx:31:15:1249:203:e:div">
+                                    <div class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow-sm" data-fg-bzoi27="1.19:2.119:/src/app/components/AirfieldLegend.tsx:32:17:1307:84:e:div"></div><span data-fg-bzoi28="1.19:2.119:/src/app/components/AirfieldLegend.tsx:33:17:1408:23:e:span">Controlled</span>
+                                  </div>
+                                  <div class="flex items-center gap-2" data-fg-bzoi30="1.19:2.119:/src/app/components/AirfieldLegend.tsx:35:15:1467:208:e:div">
+                                    <div class="w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-sm" data-fg-bzoi31="1.19:2.119:/src/app/components/AirfieldLegend.tsx:36:17:1525:87:e:div"></div><span data-fg-bzoi32="1.19:2.119:/src/app/components/AirfieldLegend.tsx:37:17:1629:25:e:span">Uncontrolled</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div data-fg-bzoi35="1.19:2.119:/src/app/components/AirfieldLegend.tsx:44:9:1760:656:e:div">
+                              <div class="pl-2 space-y-1" data-fg-bzoi36="1.19:2.119:/src/app/components/AirfieldLegend.tsx:45:11:1776:625:e:div">
+                                <p class="text-gray-400 text-[10px] mb-1" data-fg-bzoi37="1.19:2.119:/src/app/components/AirfieldLegend.tsx:46:13:1821:54:e:p">Type</p>
+                                <div class="space-y-1.5" data-fg-bzoi39="1.19:2.119:/src/app/components/AirfieldLegend.tsx:47:13:1888:496:e:div">
+                                  <div class="flex items-center gap-2" data-fg-bzoi40="1.19:2.119:/src/app/components/AirfieldLegend.tsx:48:15:1932:213:e:div">
+                                    <div class="w-[18px] h-[18px] rounded-full bg-gray-400 border-2 border-white shadow-sm" data-fg-bzoi41="1.19:2.119:/src/app/components/AirfieldLegend.tsx:49:17:1990:94:e:div"></div><span data-fg-bzoi42="1.19:2.119:/src/app/components/AirfieldLegend.tsx:50:17:2101:23:e:span">Commercial</span>
+                                  </div>
+                                  <div class="flex items-center gap-2" data-fg-bzoi44="1.19:2.119:/src/app/components/AirfieldLegend.tsx:52:15:2160:205:e:div">
+                                    <div class="w-3 h-3 rounded-full bg-gray-400 border-2 border-white shadow-sm" data-fg-bzoi45="1.19:2.119:/src/app/components/AirfieldLegend.tsx:53:17:2218:84:e:div"></div><span data-fg-bzoi46="1.19:2.119:/src/app/components/AirfieldLegend.tsx:54:17:2319:25:e:span">Recreational</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="pt-2 border-t border-gray-200" data-fg-bzoi49="1.19:2.119:/src/app/components/AirfieldLegend.tsx:61:9:2454:1558:e:div">
+                              <p class="text-gray-500 mb-1.5 font-medium" data-fg-bzoi50="1.19:2.119:/src/app/components/AirfieldLegend.tsx:62:11:2512:61:e:p">Airspaces</p>
+                              <div class="pl-2 space-y-1.5" data-fg-bzoi52="1.19:2.119:/src/app/components/AirfieldLegend.tsx:63:11:2584:1413:e:div">
+                                <div class="flex items-center gap-2" data-fg-bzoi53="1.19:2.119:/src/app/components/AirfieldLegend.tsx:64:13:2631:258:e:div">
+                                  <div class="w-4 h-2 bg-red-600/35 border border-red-600" data-fg-bzoi54="1.19:2.119:/src/app/components/AirfieldLegend.tsx:65:15:2687:117:e:div" style="border-style: dashed;"></div><span class="text-[11px]" data-fg-bzoi55="1.19:2.119:/src/app/components/AirfieldLegend.tsx:67:15:2819:51:e:span">Prohibited (P)</span>
+                                </div>
+                                <div class="flex items-center gap-2" data-fg-bzoi57="1.19:2.119:/src/app/components/AirfieldLegend.tsx:69:13:2902:264:e:div">
+                                  <div class="w-4 h-2 bg-orange-600/25 border border-orange-600" data-fg-bzoi58="1.19:2.119:/src/app/components/AirfieldLegend.tsx:70:15:2958:123:e:div" style="border-style: dashed;"></div><span class="text-[11px]" data-fg-bzoi59="1.19:2.119:/src/app/components/AirfieldLegend.tsx:72:15:3096:51:e:span">Restricted (R)</span>
+                                </div>
+                                <div class="flex items-center gap-2" data-fg-bzoi61="1.19:2.119:/src/app/components/AirfieldLegend.tsx:74:13:3179:263:e:div">
+                                  <div class="w-4 h-2 bg-yellow-600/20 border border-yellow-600" data-fg-bzoi62="1.19:2.119:/src/app/components/AirfieldLegend.tsx:75:15:3235:123:e:div" style="border-style: dashed;"></div><span class="text-[11px]" data-fg-bzoi63="1.19:2.119:/src/app/components/AirfieldLegend.tsx:77:15:3373:50:e:span">Dangerous (D)</span>
+                                </div>
+                                <div class="flex items-center gap-2" data-fg-bzoi65="1.19:2.119:/src/app/components/AirfieldLegend.tsx:79:13:3455:258:e:div">
+                                  <div class="w-4 h-2 bg-purple-600/15 border border-purple-600" data-fg-bzoi66="1.19:2.119:/src/app/components/AirfieldLegend.tsx:80:15:3511:123:e:div" style="border-style: dashed;"></div><span class="text-[11px]" data-fg-bzoi67="1.19:2.119:/src/app/components/AirfieldLegend.tsx:82:15:3649:45:e:span">CTR Zone</span>
+                                </div>
+                                <div class="flex items-center gap-2" data-fg-bzoi69="1.19:2.119:/src/app/components/AirfieldLegend.tsx:84:13:3726:254:e:div">
+                                  <div class="w-4 h-2 bg-cyan-600/10 border border-cyan-600" data-fg-bzoi70="1.19:2.119:/src/app/components/AirfieldLegend.tsx:85:15:3782:119:e:div" style="border-style: dashed;"></div><span class="text-[11px]" data-fg-bzoi71="1.19:2.119:/src/app/components/AirfieldLegend.tsx:87:15:3916:45:e:span">TMA Zone</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-1" data-fg-d3bl33="0.8:15.38:/src/app/App.tsx:236:11:7228:694:e:div">
+                <div class="aspect-square" data-fg-d3bl34="0.8:15.38:/src/app/App.tsx:237:13:7272:633:e:div">
+                  <div class="bg-white/80 backdrop-blur rounded-lg shadow-xl p-6 h-full flex flex-col" data-fg-d3bl35="0.8:15.38:/src/app/App.tsx:238:15:7318:568:e:div">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3" data-fg-d3bl36="0.8:15.38:/src/app/App.tsx:239:17:7424:212:e:h2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-6 h-6 fill-yellow-400 text-yellow-400" data-fg-d3bl37="0.8:15.38:/src/app/App.tsx:240:19:7521:60:e:Star::::::hX0">
+                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                      </svg>Recent Reviews</h2>
+                    <div class="space-y-4 flex-1 overflow-y-auto pr-2" data-fg-d3bl39="0.8:15.38:/src/app/App.tsx:243:17:7653:212:e:div">
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Jan Jansen</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EHTE - Teuge</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">Excellent tool for VFR planning! The airspaces are clearly marked and the map is well organized.</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">2 days ago</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Lisa van der Berg</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EHGG - Eelde</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">Exactly what I was looking for. All relevant information for VFR flights in one overview. Top!</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">5 days ago</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Marco Pietersen</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EHLE - Lelystad</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-gray-300" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">Very useful for pre-flight planning. The CTR zones are clearly visible. Only missing real-time NOTAM updates.</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">1 week ago</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Sophie Mulder</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EHHO - Hoogeveen</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">Great overview of all airfields and restricted areas. Saves me a lot of time with route planning!</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">1 week ago</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Peter de Vries</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EHGG - Eelde</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">User-friendly and informative. The legend is clear and the map responds quickly.</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">2 weeks ago</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Emma Bakker</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EDVM - Hildesheim</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">Perfect for cross-country planning. The German and Belgian airfields are a great addition!</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">2 weeks ago</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Thomas Schmidt</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EBZR - Zoersel</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 text-gray-300" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">Very comprehensive map with all necessary airspace information. Would love to see weather integration.</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">3 weeks ago</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100" data-fg-cj650="1.78:1.1181:/src/app/components/ReviewCard.tsx:18:5:294:879:e:div::1">
+                        <div class="flex items-start justify-between mb-2" data-fg-cj651="1.78:1.1181:/src/app/components/ReviewCard.tsx:19:7:409:607:e:div">
+                          <div data-fg-cj652="1.78:1.1181:/src/app/components/ReviewCard.tsx:20:9:473:164:e:div">
+                            <h4 class="font-semibold text-gray-900" data-fg-cj653="1.78:1.1181:/src/app/components/ReviewCard.tsx:21:11:489:64:e:h4">Anna de Jong</h4>
+                            <p class="text-xs text-gray-500" data-fg-cj655="1.78:1.1181:/src/app/components/ReviewCard.tsx:22:11:564:58:e:p">EHTE - Teuge</p>
+                          </div>
+                          <div class="flex items-center gap-1" data-fg-cj657="1.78:1.1181:/src/app/components/ReviewCard.tsx:24:9:646:357:e:div"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-4 h-4 fill-yellow-400 text-yellow-400" data-fg-cj659="1.78:1.1181:/src/app/components/ReviewCard.tsx:26:13:753:221:e:Star::::::hX0">
+                              <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg></div>
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-2" data-fg-cj6510="1.78:1.1181:/src/app/components/ReviewCard.tsx:37:7:1023:78:e:p">Finally a tool that shows everything I need for VFR flights. The visual coding system is brilliant!</p>
+                        <p class="text-xs text-gray-400" data-fg-cj6512="1.78:1.1181:/src/app/components/ReviewCard.tsx:38:7:1108:54:e:p">3 weeks ago</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 bg-white/50 backdrop-blur rounded-lg shadow-lg p-8" data-fg-d3bl43="0.8:15.38:/src/app/App.tsx:254:9:8006:2673:e:div">
+              <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-fg-d3bl44="0.8:15.38:/src/app/App.tsx:255:11:8090:109:e:h2">Why SkyBuddie?</h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-fg-d3bl46="0.8:15.38:/src/app/App.tsx:258:11:8210:2454:e:div">
+                <div class="text-center" data-fg-d3bl47="0.8:15.38:/src/app/App.tsx:259:13:8278:846:e:div">
+                  <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto" data-fg-d3bl48="0.8:15.38:/src/app/App.tsx:260:15:8322:535:e:div"><svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-fg-d3bl49="0.8:15.38:/src/app/App.tsx:261:17:8437:399:e:svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" data-fg-d3bl50="0.8:15.38:/src/app/App.tsx:262:19:8549:264:e:path"></path>
+                    </svg></div>
+                  <h3 class="text-lg font-semibold mb-2" data-fg-d3bl51="0.8:15.38:/src/app/App.tsx:265:15:8872:63:e:h3">Safe &amp; Reliable</h3>
+                  <p class="text-gray-600 text-sm" data-fg-d3bl53="0.8:15.38:/src/app/App.tsx:266:15:8950:155:e:p">Up-to-date airspace data validated according to EASA standards for maximum safety.</p>
+                </div>
+                <div class="text-center" data-fg-d3bl55="0.8:15.38:/src/app/App.tsx:271:13:9138:676:e:div">
+                  <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 mx-auto" data-fg-d3bl56="0.8:15.38:/src/app/App.tsx:272:15:9182:377:e:div"><svg class="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-fg-d3bl57="0.8:15.38:/src/app/App.tsx:273:17:9300:238:e:svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" data-fg-d3bl58="0.8:15.38:/src/app/App.tsx:274:19:9415:100:e:path"></path>
+                    </svg></div>
+                  <h3 class="text-lg font-semibold mb-2" data-fg-d3bl59="0.8:15.38:/src/app/App.tsx:277:15:9574:64:e:h3">Fast &amp; Efficient</h3>
+                  <p class="text-gray-600 text-sm" data-fg-d3bl61="0.8:15.38:/src/app/App.tsx:278:15:9653:142:e:p">Plan your complete VFR route in minutes with our intuitive interface.</p>
+                </div>
+                <div class="text-center" data-fg-d3bl63="0.8:15.38:/src/app/App.tsx:283:13:9828:819:e:div">
+                  <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 mx-auto" data-fg-d3bl64="0.8:15.38:/src/app/App.tsx:284:15:9872:520:e:div"><svg class="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-fg-d3bl65="0.8:15.38:/src/app/App.tsx:285:17:9989:382:e:svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" data-fg-d3bl66="0.8:15.38:/src/app/App.tsx:286:19:10103:245:e:path"></path>
+                    </svg></div>
+                  <h3 class="text-lg font-semibold mb-2" data-fg-d3bl67="0.8:15.38:/src/app/App.tsx:289:15:10407:59:e:h3">Always Free</h3>
+                  <p class="text-gray-600 text-sm" data-fg-d3bl69="0.8:15.38:/src/app/App.tsx:290:15:10481:147:e:p">Full access to all features without hidden costs or premium subscriptions.</p>
+                </div>
+              </div>
+            </div>
+          </main>
+          <footer class="bg-gray-900 text-gray-300 mt-16" data-fg-d3bl72="0.8:15.38:/src/app/App.tsx:299:7:10722:480:e:footer">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-fg-d3bl73="0.8:15.38:/src/app/App.tsx:300:9:10783:403:e:div">
+              <div class="text-center" data-fg-d3bl74="0.8:15.38:/src/app/App.tsx:301:11:10855:316:e:div">
+                <p class="text-sm" data-fg-d3bl75="0.8:15.38:/src/app/App.tsx:302:13:10897:65:e:p">© 2026 SkyBuddie. All rights reserved.</p>
+                <p class="text-xs mt-2 text-gray-500" data-fg-d3bl77="0.8:15.38:/src/app/App.tsx:303:13:10975:179:e:p">Do not use this information as the sole source for flight planning. Always check official NOTAMs and AIP.</p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content> -->
