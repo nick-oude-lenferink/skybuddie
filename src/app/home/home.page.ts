@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, effect, ElementRef, OnInit, Signal, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonMenuButton, IonButtons, IonSearchbar, IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonMenuButton, IonButtons, IonSearchbar, IonIcon, IonGrid, IonRow, IonCol, IonList } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
 import L, { tileLayer, latLng, marker, icon } from 'leaflet';
@@ -18,7 +18,7 @@ import { RelativeDatePipe } from '../core/pipes/relative-date.pipe';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonSearchbar, IonButtons,
+  imports: [IonList, IonCol, IonRow, IonGrid, IonSearchbar, IonButtons,
     IonContent, IonHeader, IonToolbar, CommonModule,
     FormsModule, IonMenuButton, RelativeDatePipe
   ]
@@ -37,6 +37,25 @@ export class HomePage implements OnInit {
   reviewsSignal: Signal<Review[]>;
 
   reviews: Review[] = [];
+maxHeight = window.innerHeight * 0.5;  // 50vh
+minHeight = 80;                        // collapsed height
+collapseDistance = this.maxHeight * 0.75; // shrink over 75%
+
+currentHeight = this.maxHeight;
+collapseProgress = 0;
+largeHeaderStyle:any;
+onScroll(event: any) {
+  const scrollTop = event.detail.scrollTop;
+  const progress = Math.min(scrollTop / this.collapseDistance, 1);
+
+  const scale = 1 - (1 - this.minHeight / this.maxHeight) * progress;
+
+  this.largeHeaderStyle = {
+    transform: `scaleY(${scale})`
+  };
+
+  this.collapseProgress = progress;
+}
 
   constructor(private markerService: MarkerService, private reviewService: ReviewService) {
     this.reviewsSignal = toSignal(this.reviewService.getReviews(), { initialValue: [] });

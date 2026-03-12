@@ -1,27 +1,33 @@
-<ion-header [translucent]="true" style="min-height: 30vh; background-color: #1351AA; padding-left: 35px; padding-right: 35px;">
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+<ion-header [translucent]="true">
+  <ion-toolbar [style.opacity]="collapseProgress">
+    <ion-searchbar></ion-searchbar>
   </ion-toolbar>
-  <div style="width: 70vw">
-    <div class="logo-title">
-      <img src="assets/e-flight_logo.svg" alt="Logo" class="logo" />
-      <div style="display: inline-block;">
-        <span class="title fly-in">SkyBuddie.</span>
-        <span class="subtitle appear">powered by E-Flight Teuge</span>
+</ion-header>
+<ion-content (ionScroll)="onScroll($event)" scrollEvents="true">
+  <!-- This replaces your big header -->
+  <div class="large-header" [ngStyle]="largeHeaderStyle">
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <div [style.opacity]="1 - collapseProgress" style="width: 70vw;  padding-left: 35px; padding-right: 35px;">
+      <div class="logo-title">
+        <img src="assets/e-flight_logo.svg" alt="Logo" class="logo" />
+        <div style="display: inline-block;">
+          <span class="title fly-in">SkyBuddie.</span>
+          <span class="subtitle appear">powered by E-Flight Teuge</span>
+        </div>
+      </div>
+      <div class="ion-margin-bottom" style="color: #f3f8ff;">
+        <p><b>Welcome aboard!</b></p>
+        <p>We're your trusty Sky Buddie, thinking along with you every step of the way. From planning your route to discovering the most fun destinations. We've got your back so you can focus on flying while we handle the rest.</p>
+      </div>
+      <div class="search-bar ion-margin-bottom">
+        <ion-searchbar placeholder="SkyBuddie. search"></ion-searchbar>
       </div>
     </div>
-    <div class="ion-margin-bottom" style="color: #f3f8ff;">
-      <p><b>Welcome aboard!</b></p>
-      <p>We're your trusty Sky Buddie, thinking along with you every step of the way. From planning your route to discovering the most fun destinations. We've got your back so you can focus on flying while we handle the rest.</p>
-    </div>
-    <div class="search-bar ion-margin-bottom">
-      <ion-searchbar placeholder="SkyBuddie. search"></ion-searchbar>
-    </div>
   </div>
-</ion-header>
-<ion-content [fullscreen]="true">
   <ion-grid style="background-image: linear-gradient(to right bottom, oklch(0.97 0.014 254.604) 0%, oklch(0.977 0.013 236.62) 50%, oklch(0.962 0.018 272.314) 100%)">
     <ion-row>
       <ion-col size="12" size-md="6" style="max-height: 50vh;">
@@ -71,14 +77,14 @@
                 <div style="font-weight: bold;    margin-bottom: 14px;">Community</div>
                 <div style="text-align: center;font-weight: 300;    font-size: 0.9em;">Reviews from other pilots creating creative ideas for future destinations.</div>
               </ion-col>
-              <ion-col size="12" size-md="4"  style="    align-items: center;    display: flex;    flex-direction: column;">
+              <ion-col size="12" size-md="4" style="    align-items: center;    display: flex;    flex-direction: column;">
                 <div style="display: flex; justify-content: center; align-items: center; border-radius: 100%; color:#009966; background-color: #d0fae5; height: 64px;width: 64px; position: relative;    margin-bottom: 14px;">
                   <i class="fa-solid fa-bolt-lightning fa-2x" style="font-size: 24px;"></i>
                 </div>
                 <div style="font-weight: bold;    margin-bottom: 14px;">Fast & Efficient</div>
                 <div style="text-align: center;font-weight: 300;    font-size: 0.9em;">Plan your complete VFR route in minutes with our intuitive interface.</div>
               </ion-col>
-              <ion-col size="12" size-md="4"  style="    align-items: center;    display: flex;    flex-direction: column;">
+              <ion-col size="12" size-md="4" style="    align-items: center;    display: flex;    flex-direction: column;">
                 <div style="display: flex; justify-content: center; align-items: center; border-radius: 100%; color: #9810fa;background-color: #f3e8ff; height: 64px;width: 64px; position: relative;    margin-bottom: 14px;">
                   <i class="fa-solid fa-lightbulb fa-2x" style="font-size: 24px;"></i>
                 </div>
