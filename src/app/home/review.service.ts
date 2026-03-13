@@ -2,10 +2,36 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { Review } from './review.model';
+import { PopularDestination } from "./popular-destination.model";
 
 @Injectable({ providedIn: 'root' })
 export class ReviewService {
   constructor(private http: HttpClient) { }
+
+  getPopularDestinations(): Observable<PopularDestination[]> {
+    return of([
+      {
+        code: 'EHGG',
+        name: 'Groningen Airport Eelde',
+        averageRating: 5,
+        numReviews: 2,
+        location: 'Eelde'
+      },
+      {
+        code: 'EHTE',
+        name: 'Teuge',
+        averageRating: 5,
+        numReviews: 2,
+        location: 'Teuge'
+      },{
+        code: 'EHHO',
+        name: 'Hoogeveen',
+        averageRating: 5,
+        numReviews: 1,
+        location: 'Hoogeveen'
+      }
+    ]);
+  }
 
   getReviews(): Observable<Review[]> {
     return of([
