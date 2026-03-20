@@ -127,7 +127,7 @@
                 <span style=" font-size: 22px; font-weight: 700;">Reviews ({{reviews().length}})</span>
               </div>
               <div>
-                <button id="open-modal" style=" padding: 15px 20px;
+                <button id="open-review-modal" style="padding: 15px 20px;
                 border-radius: 10px;
                 font-size: 18px;
                 font-weight: bold;
@@ -172,7 +172,7 @@
   </ion-content>
 </ng-template>
 
-<ion-modal trigger="open-modal" (willPresent)="showCreateReviewModal()">
+<ion-modal trigger="open-review-modal" (willPresent)="showCreateReviewModal()">
   <ng-template>
     <ion-header>
       <ion-toolbar>
