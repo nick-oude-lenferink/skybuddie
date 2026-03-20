@@ -1,5 +1,4 @@
-$primary-blue: #1351AA;
-$secondary-blue: #bedbff;
+
 .title {
     color: #F3F8FF;
     font-size: 48px;
@@ -89,32 +88,6 @@ ion-searchbar::part(container) {
     padding: 25px;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border: 0px solid;
-    border-radius: 10px;
-    border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    padding: 20px;
-    outline-color: oklab(0.708 0 0 / 0.5);
-    height: 100%;
-
-    &.blue {
-        background-color: $primary-blue;
-        color: #fff;
-    }
-
-    .card-header {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-}
 
 .map {
     aspect-ratio: 1 / 1;
@@ -276,7 +249,7 @@ ion-searchbar::part(container) {
                 rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
 
             .code {
-                color: $primary-blue;
+                color: var(--color-primary-blue);
             }
 
             .image {
@@ -292,7 +265,7 @@ ion-searchbar::part(container) {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: $primary-blue;
+            background: var(--color-primary-blue);
             padding: 4px;
             width: 40px;
             border-radius: 11px;

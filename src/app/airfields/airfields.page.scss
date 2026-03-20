@@ -1,0 +1,286 @@
+.title {
+    color: #F3F8FF;
+    font-size: 48px;
+    display: block;
+    font-family: 'Ruda';
+    font-weight: 700;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+    margin-bottom: 32px;
+
+    .icon {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 11px;
+        display: inline-block;
+        height: 90px;
+        width: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            font-size: 36px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    .title {
+        font-size: 48px;
+
+    }
+
+    .subtitle {
+        font-size: 20px;
+        color: var(--color-text-secondary);
+    }
+}
+
+:host ::ng-deep .search-bar ion-searchbar {
+    --border-radius: 14px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    padding-left: 0;
+    padding-right: 0;
+
+    .searchbar-input-container {
+        .searchbar-search-icon {
+            width: 26px;
+            height: 26px;
+            top: 18px;
+        }
+
+        .searchbar-input {
+            padding: 15px;
+            padding-left: 56px;
+        }
+    }
+}
+
+.airfield {
+    cursor: pointer;
+    background-color: #fff;
+    transition-duration: 300ms;
+    border-radius: 10px;
+    font-size: 14px;
+    border-color: oklch(0.967 0.003 264.542);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
+    &:hover {
+        translate: 0 -4px;
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+            rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+            rgba(0, 0, 0, 0.1) 0px 8px 30px -1px;
+    }
+
+    .image {
+        height: 200px;
+
+        img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow-clip-margin: content-box;
+            overflow: clip;
+            box-sizing: border-box;
+            transition-duration: 300ms;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .info {
+        padding: 20px;
+
+        .main-info {
+            display: flex;
+            flex-direction: row;
+            column-gap: 10px;
+
+            .category-indicator {
+                width: 14px;
+                height: 14px;
+                border-radius: 10px;
+                margin-top: 6px;
+
+                &.recreational {
+                    background-color: var(--color-green-500);
+                }
+
+                &.commercial {
+                    background-color: var(--color-blue-500);
+                }
+            }
+
+            .code {
+                font-weight: lighter;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .name {
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+        }
+
+        .sub-info {
+            font-weight: lighter;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+    }
+
+    .footer {
+        border-top: 1px solid #f3f4f6;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0px;
+        margin: 0px 20px;
+        color: var(--color-blue-500);
+    }
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+
+    .input {
+        flex: 1;
+        font-size: 0.9em;
+    }
+
+    .label {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .filter-input {
+        padding: 10px 16px;
+        box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+        border-radius: 10px;
+        border: 1px solid var(--color-gray-300);
+        position: relative;
+
+        .counter {
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            padding: 5px;
+            background-color: var(--color-blue-600);
+            color: white;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+:host ::ng-deep .search-filter ion-searchbar {
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+    border: 1px solid var(--color-gray-300);
+    height: 41px;
+
+    .searchbar-input-container::before {
+        font-family: "Font Awesome 7 Free";
+        content: "\f124"; // magnifying-glass
+        font-weight: 900;
+        position: absolute;
+        left: 14px;
+        line-height: 0;
+        font-size: 16px;
+        color: var(--color-gray-500);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:focus-within {
+        outline: 2px solid var(--color-blue-500);
+        border-color: #00000000;
+    }
+
+    .searchbar-input-container {
+        padding: 0 24px;
+
+        .searchbar-search-icon {
+            display: none;
+        }
+    }
+
+    .searchbar-input {
+        font-size: 14px;
+        padding: 8px 16px;
+        box-shadow: none;
+        line-height: 0;
+    }
+}
+
+.filter {
+    ion-label {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .filter-option {
+        background-color: var(--color-gray-50);
+        color: var(--color-gray-700);
+        margin: 10px;
+        font-weight: bold;
+
+        padding: 12px;
+        border-radius: 10px;
+        display: block;
+        width: 100%;
+        text-align: start;
+        font-size: 16px;
+
+        border: 2px solid #00000000;
+
+        &.selected {
+            background-color: var(--color-blue-100);
+            color: var(--color-blue-900);
+            box-sizing: inherit;
+            border-color: var(--color-blue-500);
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: end;
+    padding: 16px;
+    column-gap: 16px;
+}
