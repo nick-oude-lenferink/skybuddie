@@ -1,27 +1,27 @@
-import { AfterViewInit, Component, effect, ElementRef, OnInit, Signal, signal, ViewChild } from '@angular/core';
+import { Component, effect, ElementRef, OnInit, Signal, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonMenuButton, IonButtons, IonSearchbar, IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonToolbar, IonMenuButton, IonButtons, IonGrid, IonRow, IonCol, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
-import L, { tileLayer, latLng, marker, icon } from 'leaflet';
+import L, { latLng, icon } from 'leaflet';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MarkerService } from './marker.service';
 import { MapMarker } from './map-marker.model';
 import { Review } from './review.model';
 import { ReviewService } from './review.service';
-import { DateTime } from 'luxon';
 import { RelativeDatePipe } from '../core/pipes/relative-date.pipe';
+import { RouterModule } from '@angular/router';
+import { PopularDestination, Highlight } from './popular-destination.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonSearchbar, IonButtons,
-    IonContent, IonHeader, IonToolbar, CommonModule,
-    FormsModule, IonMenuButton, RelativeDatePipe
-  ]
+  imports: [IonCol, IonRow, IonGrid, IonButtons,
+    IonContent, IonToolbar, CommonModule,
+    FormsModule, IonMenuButton, RelativeDatePipe, IonRouterLink, RouterModule, CommonModule]
 })
 export class HomePage implements OnInit {
   @ViewChild('mapContainer', { static: false }) mapContainer!: ElementRef<HTMLDivElement>;
@@ -35,13 +35,31 @@ export class HomePage implements OnInit {
   );
 
   reviewsSignal: Signal<Review[]>;
+  destinationsSignal: Signal<PopularDestination[]>;
 
   reviews: Review[] = [];
+  destinations: PopularDestination[] = [];
+  highlight: Highlight = {
+    code: 'EHGG',
+    name: 'Groningen Airfield Eelde',
+    description: 'Perfect for a vibrant city trip to Groningen',
+    icon: '🏙️',
+    imageName: 'Groningen.png',
+    tag: 'City Experience',
+    location: 'Eelde, Netherlands'
+  };
+
+  activities: string[] = ['Nature walks', 'Cycling tours', 'Garden visits'];
 
   constructor(private markerService: MarkerService, private reviewService: ReviewService) {
     this.reviewsSignal = toSignal(this.reviewService.getReviews(), { initialValue: [] });
     effect(() => {
       this.reviews = this.reviewsSignal();
+    });
+
+    this.destinationsSignal = toSignal(this.reviewService.getPopularDestinations(), { initialValue: [] });
+    effect(() => {
+      this.destinations = this.destinationsSignal();
     });
 
     addIcons({ starOutline, star });
@@ -88,7 +106,7 @@ export class HomePage implements OnInit {
 
       div.innerHTML = `
         <div class="header">Legend</div>
-        <div class="item"><img src="assets/marker-icon.png" height="20px"></img> Airports</div>
+        <div class="item"><img src="assets/marker-icon.png" height="20px"></img> Airfields</div>
       `;
 
       return div;
@@ -114,6 +132,6 @@ export class HomePage implements OnInit {
     });
   }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
 }

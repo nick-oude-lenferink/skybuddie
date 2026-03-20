@@ -5,3 +5,4 @@ export interface Review {
   location: string;
   rating: number;
 }
+

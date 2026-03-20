@@ -1,0 +1,113 @@
+<ion-content>
+  <div class="header" style="background-color: #1351AA; padding-left: 35px; padding-right: 35px; padding-bottom: 35px;">
+    <div style="max-width: 75rem; margin: auto; padding: 0 12px;">
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <div style="width: 70%">
+        <div class="page-header">
+          <div class="icon">
+            <i class="fa-solid fa-plane"></i>
+          </div>
+          <div>
+            <div class="title">Airfields</div>
+            <div class="subtitle">Browse all airfields, check what's on and easily plan your next flight.</div>
+          </div>
+        </div>
+
+        <div class="search-bar ion-margin-bottom">
+          <ion-searchbar placeholder="Search by airfield or code..." (ionInput)="changeSearchQuery($event)"></ion-searchbar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background-color: #f5f5f5;background-image: linear-gradient(to right bottom, oklch(0.97 0.014 254.604) 0%, oklch(0.977 0.013 236.62) 50%, oklch(0.962 0.018 272.314) 100%);padding-left: 35px; padding-right: 35px; padding-bottom: 35px;">
+    <ion-grid style="max-width: 75rem; margin: auto; --ion-grid-padding:0px; --ion-grid-column-padding: 12px; padding-top: 24px;">
+      <ion-row>
+        <ion-col>
+          <div class="card">
+            <div class="card-header">Filters</div>
+            <div class="filters">
+              <div class="input">
+                <div class="label">Filter category</div>
+                <div class="filter-input" id="open-modal">
+                  <i class="fa-solid fa-filter" style="margin-right: 10px; font-size: 16px;"></i>
+                  <span>Category filters</span>
+                  <span class="counter" *ngIf="numActiveFilters > 0">{{numActiveFilters}}</span>
+                </div>
+              </div>
+              <div class="input">
+                <div class="label">Starting point</div>
+                <div class="search-filter"><ion-searchbar placeholder="Search by airfield or code..."></ion-searchbar></div>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-md="6" *ngFor="let airfield of airfields()">
+          <div class="airfield" [routerLink]="['/airfields', airfield.code]">
+            <div class="image">
+              <img [src]="'assets/images/airfields/'+airfield.code+'.png'" />
+            </div>
+            <div class="info">
+              <div class="main-info">
+                <div class="category-indicator" [class]="airfield.category"></div>
+                <div>
+                  <div class="name">{{airfield.name}}</div>
+                  <div class="code">{{airfield.code}}</div>
+                </div>
+              </div>
+              <div class="sub-info">
+                <div class="location"><i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i>{{airfield.city}}, {{airfield.country}}</div>
+                <div>Type: {{airfield.type}}</div>
+                <div>Surface: {{airfield.surface}}</div>
+                <div>Category: {{airfield.category}}</div>
+              </div>
+            </div>
+            <div class="footer">
+              <span>View details</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ion-modal trigger="open-modal" (willPresent)="showFilterModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title><i class="fa-solid fa-filter" style="margin-right: 10px;"></i>Filters</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="cancel()"><i class="fa-solid fa-xmark"></i></ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div class="filter">
+        <ion-label>Surface type</ion-label>
+        <div class="filter-option" [class.selected]="tempFilters.surfaceType == surfaceType" *ngFor="let surfaceType of surfaceTypes" (click)="setSurfaceType(surfaceType)">{{surfaceType}}</div>
+      </div>
+      <div class="filter">
+        <ion-label>Airspace control</ion-label>
+        <div class="filter-option" [class.selected]="tempFilters.airfieldType == airfieldType" *ngFor="let airfieldType of airfieldTypes" (click)="setType(airfieldType)">{{airfieldType}}</div>
+      </div>
+      <div class="filter">
+        <ion-label>Category</ion-label>
+        <button class="filter-option" [class.selected]="tempFilters.airfieldCategory == airfieldCategory" *ngFor="let airfieldCategory of airfieldCategories" (click)="setCategory(airfieldCategory)">{{airfieldCategory}}</button>
+      </div>
+    </ion-content>
+    <ion-footer>
+      <div class="footer-buttons">
+        <ion-button color="light" (click)="clearFilters()">Clear all</ion-button>
+        <ion-button (click)="confirm()">Apply filters</ion-button>
+      </div>
+    </ion-footer>
+
+  </ng-template>
+</ion-modal>

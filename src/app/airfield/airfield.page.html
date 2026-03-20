@@ -1,0 +1,304 @@
+<ion-content [fullscreen]="true" *ngIf="airfield() as a; else notFound">
+  <div class="header" style="background-color: #1351AA; padding-left: 35px; padding-right: 35px; padding-bottom: 35px;">
+    <div style="max-width: 75rem; margin: auto; padding: 0 12px;">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/airfields" text="Back to airfields"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <div style="width: 70%">
+        <div class="page-header">
+          <div class="icon">
+            <i class="fa-solid fa-plane"></i>
+          </div>
+          <div>
+            <div class="title">{{a.name}}</div>
+            <div class="subtitle">{{a.code}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="sub-info">
+        <div class="category-indicator" [class]="a.category"></div>
+        <div class="data">
+          <span>{{a.surface | titlecase}}</span><span>•</span>
+          <span>{{a.type | titlecase}}</span><span>•</span>
+          <span>{{a.category | titlecase}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background-color: #f5f5f5;background-image: linear-gradient(to right bottom, oklch(0.97 0.014 254.604) 0%, oklch(0.977 0.013 236.62) 50%, oklch(0.962 0.018 272.314) 100%);padding-left: 35px; padding-right: 35px; padding-bottom: 35px;">
+    <ion-grid style="max-width: 75rem; margin: auto; --ion-grid-padding:0px; --ion-grid-column-padding: 12px; padding-top: 24px;">
+      <ion-row>
+        <ion-col size="12">
+          <div class="card map">
+            <div #mapContainer style="height: 100%;">
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="card recent-reviews">
+            <div class="card-header xl">
+              <span><i class="fa-regular fa-file-lines" style="margin-right: 10px; color:var(--color-primary-blue)"></i></span>
+              <span>Essential information</span>
+            </div>
+            <div class="essential-info">
+              <div class="info" *ngFor="let i of essentialInfo">
+                <div class="icon">
+                  <i [class]="i.iconClasses"></i>
+                </div>
+                <div>
+                  <div class="title">{{i.title}}</div>
+                  @if (i.isLink) {
+                  <a [href]="i.description" target="_blank">Navigate to</a>
+                  } @else {
+                  <div class="description">{{i.description}}</div>
+                  }
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="card recent-reviews">
+            <div class="card-header xl">
+              <span><i class="fa-solid fa-utensils" style="margin-right: 10px; color:var(--color-primary-blue)"></i></span>
+              <span>Recreational information</span>
+            </div>
+            <div class="recreational-info">
+              <div class="info">
+                <div class="header"><i class="fa-solid fa-utensils"></i>Restaurants</div>
+                <div class="details">
+                  <div class="item" *ngFor="let r of pointsOfInterest()?.restaurants"><i class="fa-solid fa-circle" style="font-size: .5em;"></i>{{r.name}}</div>
+                  <button class="button" disabled="true">View all restaurants</button>
+                </div>
+              </div>
+              <div class="info">
+                <div class="header"><i class="fa-solid fa-building"></i>Accomodations</div>
+                <div class="details">
+                  <div class="item" *ngFor="let r of pointsOfInterest()?.hotels"><i class="fa-solid fa-circle" style="font-size: .5em;"></i>{{r.name}}</div>
+                  <button class="button" disabled="true">View all accomodations</button>
+
+                </div>
+              </div>
+              <div class="info">
+                <div class="header"><i class="fa-solid fa-location-dot"></i>Attractions</div>
+                <div class="details">
+                  <div class="item" *ngFor="let r of pointsOfInterest()?.attractions"><i class="fa-solid fa-circle" style="font-size: .5em;"></i>{{r.name}}</div>
+                </div>
+              </div>
+              <div class="info">
+                <div class="header"><i class="fa-solid fa-car-side"></i>Transport options</div>
+                <div class="details">
+                  <div class="item"><i class="fa-solid fa-car-side"></i>Taxi: {{pointsOfInterest()?.transport?.taxi ? 'Available' : 'Unavailable'}}</div>
+                  <div class="item"><i class="fa-solid fa-car-side"></i>Car rental: {{pointsOfInterest()?.transport?.carRental ? 'Available' : 'Unavailable'}}</div>
+                  <div class="item"><i class="fa-solid fa-bus-side"></i>{{pointsOfInterest()?.transport?.publicTransport}}</div>
+                  <button class="button" disabled="true">View all transport details</button>
+                </div>
+              </div>
+              <div class="info">
+                <div class="header"><i class="fa-solid fa-compass"></i>Activities</div>
+                <div class="details">
+                  <div class="item" *ngFor="let r of pointsOfInterest()?.activities"><i class="fa-solid fa-circle" style="font-size: .5em;"></i>{{r}}</div>
+                </div>
+              </div>
+              <div class="info">
+                <div class="header"><i class="fa-solid fa-location-dot"></i>Nearby towns</div>
+                <div class="details">
+                  <span class="nearby-town" *ngFor="let nt of pointsOfInterest()?.nearbyTowns">{{nt}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <div style="display: flex; justify-content: space-between;">
+              <div style="display: flex; align-items: center;">
+                <i class="fa-solid fa-message" style="margin-right: 10px;color: var(--color-primary-blue)"></i>
+                <span style=" font-size: 22px; font-weight: 700;">Reviews ({{reviews().length}})</span>
+              </div>
+              <div>
+                <button id="open-modal" style=" padding: 15px 20px;
+                border-radius: 10px;
+                font-size: 18px;
+                font-weight: bold;
+                background-color: var(--color-primary-blue);"><i class="fa-regular fa-pen-to-square" style="margin-right: 10px;"></i>Leave a review</button>
+              </div>
+            </div>
+            <div class="reviews">
+              <ion-grid class="grid-no-padding">
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" *ngFor="let review of reviews()">
+                    <div class="review">
+                      <div class="review-header">
+                        <div>
+                          <div class="user">{{review.userFullName}}</div>
+                          <div class="location">{{review.location}}</div>
+                        </div>
+                        <div>
+                          <i class="fa-star" [class]="review.rating > 0 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                        </div>
+                      </div>
+                      <div class="review-description">{{review.description}}</div>
+                      <div class="review-date" [title]="review.date.toDateString()">{{review.date | relativeDate}}</div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ng-template #notFound>
+  <ion-content>
+    <p class="ion-padding">Airfield not found.</p>
+  </ion-content>
+</ng-template>
+
+<ion-modal trigger="open-modal" (willPresent)="showCreateReviewModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title><i class="fa-solid fa-filter" style="margin-right: 10px;"></i>Leave a review</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="cancel()"><i class="fa-solid fa-xmark"></i></ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <form #reviewForm="ngForm">
+        <ng-container *ngIf="reviewInput">
+          <div class="form-input">
+            <ion-label>Airfield *</ion-label>
+            <input class="input" disabled [(ngModel)]="reviewInput.airfield" name="airfield" required />
+          </div>
+          <div class="form-input">
+            <ion-label>Your name *</ion-label>
+            <input class="input" type="text" [(ngModel)]="reviewInput.name" name="name" placeholder="Enter you name" required />
+          </div>
+          <div class="form-input">
+            <ion-label>Visit date</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime id="datetime" presentation="date" [(ngModel)]="reviewInput.date" name="date" [formatOptions]="{
+        date: { day: '2-digit', month: 'long', year: 'numeric' },
+      }"></ion-datetime>
+              </ng-template>
+            </ion-modal>
+          </div>
+          <div class="form-input">
+            <ion-label>Rate you experience (Optional - rate what applies)</ion-label>
+            <div class="ratings">
+              <div class="rating">
+                <ion-label>🍽️ Food & drinks</ion-label>
+                <div class="rating-input">
+                  <i class="fa-star" [class]="reviewInput.ratings['food_drinks'] && reviewInput.ratings['food_drinks'] >= 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('food_drinks', 1)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['food_drinks'] && reviewInput.ratings['food_drinks'] >= 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('food_drinks', 2)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['food_drinks'] && reviewInput.ratings['food_drinks'] >= 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('food_drinks', 3)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['food_drinks'] && reviewInput.ratings['food_drinks'] >= 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('food_drinks', 4)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['food_drinks'] && reviewInput.ratings['food_drinks'] >= 5 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('food_drinks', 5)"></i>
+                  <span *ngIf="reviewInput.ratings['food_drinks']" (click)="clearRating('food_drinks')" class="clear-rating">Clear</span>
+                </div>
+              </div>
+              <div class="rating">
+                <ion-label>🏨 Accommodation</ion-label>
+                <div class="rating-input">
+                  <i class="fa-star" [class]="reviewInput.ratings['accomodation'] && reviewInput.ratings['accomodation'] >= 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('accomodation', 1)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['accomodation'] && reviewInput.ratings['accomodation'] >= 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('accomodation', 2)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['accomodation'] && reviewInput.ratings['accomodation'] >= 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('accomodation', 3)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['accomodation'] && reviewInput.ratings['accomodation'] >= 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('accomodation', 4)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['accomodation'] && reviewInput.ratings['accomodation'] >= 5 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('accomodation', 5)"></i>
+                  <span *ngIf="reviewInput.ratings['accomodation']" (click)="clearRating('accomodation')" class="clear-rating">Clear</span>
+                </div>
+              </div>
+              <div class="rating">
+                <ion-label>🌍 Surroundings</ion-label>
+                <div class="rating-input">
+                  <i class="fa-star" [class]="reviewInput.ratings['surroundings'] && reviewInput.ratings['surroundings'] >= 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('surroundings', 1)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['surroundings'] && reviewInput.ratings['surroundings'] >= 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('surroundings', 2)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['surroundings'] && reviewInput.ratings['surroundings'] >= 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('surroundings', 3)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['surroundings'] && reviewInput.ratings['surroundings'] >= 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('surroundings', 4)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['surroundings'] && reviewInput.ratings['surroundings'] >= 5 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('surroundings', 5)"></i>
+                  <span *ngIf="reviewInput.ratings['surroundings']" (click)="clearRating('surroundings')" class="clear-rating">Clear</span>
+                </div>
+              </div>
+              <div class="rating">
+                <ion-label>✈️ Facilities</ion-label>
+                <div class="rating-input">
+                  <i class="fa-star" [class]="reviewInput.ratings['facilities'] && reviewInput.ratings['facilities'] >= 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('facilities', 1)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['facilities'] && reviewInput.ratings['facilities'] >= 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('facilities', 2)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['facilities'] && reviewInput.ratings['facilities'] >= 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('facilities', 3)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['facilities'] && reviewInput.ratings['facilities'] >= 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('facilities', 4)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['facilities'] && reviewInput.ratings['facilities'] >= 5 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('facilities', 5)"></i>
+                  <span *ngIf="reviewInput.ratings['facilities']" (click)="clearRating('facilities')" class="clear-rating">Clear</span>
+                </div>
+              </div>
+              <div class="rating">
+                <ion-label>🛬 Runway Quality</ion-label>
+                <div class="rating-input">
+                  <i class="fa-star" [class]="reviewInput.ratings['runway_quality'] && reviewInput.ratings['runway_quality'] >= 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('runway_quality', 1)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['runway_quality'] && reviewInput.ratings['runway_quality'] >= 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('runway_quality', 2)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['runway_quality'] && reviewInput.ratings['runway_quality'] >= 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('runway_quality', 3)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['runway_quality'] && reviewInput.ratings['runway_quality'] >= 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('runway_quality', 4)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['runway_quality'] && reviewInput.ratings['runway_quality'] >= 5 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('runway_quality', 5)"></i>
+                  <span *ngIf="reviewInput.ratings['runway_quality']" (click)="clearRating('runway_quality')" class="clear-rating">Clear</span>
+                </div>
+              </div>
+              <div class="rating">
+                <ion-label>👥 Staff & Service</ion-label>
+                <div class="rating-input">
+                  <i class="fa-star" [class]="reviewInput.ratings['staff_service'] && reviewInput.ratings['staff_service'] >= 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('staff_service', 1)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['staff_service'] && reviewInput.ratings['staff_service'] >= 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('staff_service', 2)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['staff_service'] && reviewInput.ratings['staff_service'] >= 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('staff_service', 3)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['staff_service'] && reviewInput.ratings['staff_service'] >= 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('staff_service', 4)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['staff_service'] && reviewInput.ratings['staff_service'] >= 5 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('staff_service', 5)"></i>
+                  <span *ngIf="reviewInput.ratings['staff_service']" (click)="clearRating('staff_service')" class="clear-rating">Clear</span>
+                </div>
+              </div>
+              <div class="rating">
+                <ion-label>💰 Value for Money</ion-label>
+                <div class="rating-input">
+                  <i class="fa-star" [class]="reviewInput.ratings['value_money'] && reviewInput.ratings['value_money'] >= 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('value_money', 1)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['value_money'] && reviewInput.ratings['value_money'] >= 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('value_money', 2)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['value_money'] && reviewInput.ratings['value_money'] >= 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('value_money', 3)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['value_money'] && reviewInput.ratings['value_money'] >= 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('value_money', 4)"></i>
+                  <i class="fa-star" [class]="reviewInput.ratings['value_money'] && reviewInput.ratings['value_money'] >= 5 ? 'fa-solid star-yellow' : 'fa-regular star-outline'" (click)="setRating('value_money', 5)"></i>
+                  <span *ngIf="reviewInput.ratings['value_money']" (click)="clearRating('value_money')" class="clear-rating">Clear</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-input">
+              <ion-label>Your review *</ion-label>
+              <textarea class="input" type="text" [(ngModel)]="reviewInput.description" name="description" placeholder="Share your experience at this airfield..." required></textarea>
+            </div>
+          </div>
+        </ng-container>
+      </form>
+    </ion-content>
+    <ion-footer>
+      <div class="footer-buttons">
+        <ion-button color="light" (click)="cancel()">Cancel</ion-button>
+        <ion-button [disabled]="reviewForm.invalid" (click)="submitReview()">Submit review</ion-button>
+      </div>
+    </ion-footer>
+
+  </ng-template>
+</ion-modal>

@@ -1,0 +1,132 @@
+<ion-content>
+  <div class="header" style="background-color: #1351AA; padding-left: 35px; padding-right: 35px; padding-bottom: 35px;">
+    <div style="max-width: 75rem; margin: auto; padding: 0 12px;">
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <div style="width: 70%">
+        <div class="page-header">
+          <div class="icon">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <div>
+            <div class="title">Community reviews</div>
+            <div class="subtitle">Read. Explore. Share. Repeat. Together we turn experiences into shared knowledge!</div>
+          </div>
+        </div>
+      </div>
+      <div class="ion-margin-bottom">
+        <button class="header-button"><i class="fa-solid fa-circle-plus" style="margin-right: 10px;"></i>Leave review</button>
+      </div>
+      <ion-grid style="max-width: 75rem; margin: auto; --ion-grid-padding:0px; --ion-grid-column-padding: 6px; padding-top: 24px; margin-left: -6px; margin-right: 6px;"> <ion-row>
+          <ion-col sizeMd="4">
+            <div class="metric">
+              <div class="header"><i class="fa-solid fa-message" style="margin-right: 10px;"></i>Total reviews</div>
+              <div class="details">13</div>
+            </div>
+          </ion-col>
+          <ion-col sizeMd="4">
+            <div class="metric">
+              <div class="header"><i class="fa-regular fa-star" style="margin-right: 10px;"></i>Average rating</div>
+              <div class="details">4.3</div>
+              <i class="fa-star fa-solid star-yellow"></i>
+              <i class="fa-star fa-solid star-yellow"></i>
+              <i class="fa-star fa-solid star-yellow"></i>
+              <i class="fa-star fa-solid star-yellow"></i>
+              <i class="fa-star fa-regular star-outline"></i>
+            </div>
+          </ion-col>
+          <ion-col sizeMd="4">
+            <div class="metric">
+              <div class="header"><i class="fa-solid fa-arrow-trend-up" style="margin-right: 10px;"></i>Recent activity</div>
+              <div class="details">5</div>
+              <div>Reviews this week</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <div style="background-color: #f5f5f5;background-image: linear-gradient(to right bottom, oklch(0.97 0.014 254.604) 0%, oklch(0.977 0.013 236.62) 50%, oklch(0.962 0.018 272.314) 100%);padding-left: 35px; padding-right: 35px; padding-bottom: 35px;">
+    <ion-grid style="max-width: 75rem; margin: auto; --ion-grid-padding:0px; --ion-grid-column-padding: 12px; padding-top: 24px;">
+      <ion-row>
+        <ion-col>
+          <div class="card">
+            <div class="card-header">Filters</div>
+            <div class="filters">
+              <div class="input">
+                <div class="label">Filter by airfield</div>
+                <select placeholder="Select airfield">
+                  <option>All airfields</option>
+                </select>
+              </div>
+              <div class="input">
+                <div class="label">Filter by rating</div>
+                <div class="rating-filters">
+                  <div>5*</div>
+                  <div>4*</div>
+                  <div>3*</div>
+                  <div>2*</div>
+                  <div>1*</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="filters">
+              <div class="input" style="flex: .5; margin-right: 20px;">
+                <div class="label">Filter by topic</div>
+                <div class="filter-input" id="open-modal">
+                  <i class="fa-solid fa-filter" style="margin-right: 10px; font-size: 16px;"></i>
+                  <span>Filters</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <div style="display: flex; justify-content: space-between;">
+              <div style="display: flex; align-items: center;">
+                <span style=" font-size: 22px; font-weight: 700;">All reviews</span>
+              </div>
+            </div>
+            <div class="reviews">
+              <ion-grid class="grid-no-padding">
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" *ngFor="let review of reviews()">
+                    <div class="review">
+                      <div class="review-header">
+                        <div>
+                          <div class="user">{{review.userFullName}}</div>
+                          <div class="location">{{review.location}}</div>
+                        </div>
+                        <div>
+                          <i class="fa-star" [class]="review.rating > 0 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 1 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 2 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 3 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                          <i class="fa-star" [class]="review.rating > 4 ? 'fa-solid star-yellow' : 'fa-regular star-outline'"></i>
+                        </div>
+                      </div>
+                      <div class="review-description">{{review.description}}</div>
+                      <div class="review-date" [title]="review.date.toDateString()">{{review.date | relativeDate}}</div>
+                      <div class="footer">
+                        <span>View details</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
